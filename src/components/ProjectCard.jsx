@@ -1,6 +1,9 @@
-function ProjectCard({ project }) {
+function ProjectCard({ project, index }) {
     return (
-        <article className="project-card">
+        <article
+            className={`project-card ${index % 2 !== 0 ? "project-card--reverse" : ""
+                }`}
+        >
             <div className="project-card__header">
                 <span className="project-card__number">{project.number}</span>
 
@@ -8,11 +11,9 @@ function ProjectCard({ project }) {
             </div>
 
             <a href={project.link} className="project-card__image-wrapper">
-                <img
-                    src={project.image}
-                    alt={project.title}
-                    className="project-card__image"
-                />
+                <div className="project-card__placeholder">
+                    <span>{project.title}</span>
+                </div>
 
                 <span className="project-card__view">
                     View project
@@ -21,7 +22,7 @@ function ProjectCard({ project }) {
             </a>
 
             <div className="project-card__content">
-                <div>
+                <div className="project-card__copy">
                     <h3>{project.title}</h3>
 
                     <p>{project.description}</p>
