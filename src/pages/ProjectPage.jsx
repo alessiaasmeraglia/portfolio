@@ -1,0 +1,149 @@
+import { Link, useParams } from "react-router-dom";
+import projects from "../data/projects";
+
+function ProjectPage() {
+    const { slug } = useParams();
+
+    const project = projects.find((item) => item.slug === slug);
+
+    if (!project) {
+        return (
+            <main className="project-not-found">
+                <p>404</p>
+                <h1>Project not found.</h1>
+
+                <Link to="/">
+                    ← Back home
+                </Link>
+            </main>
+        );
+    }
+
+    return (
+        <main className="case-study">
+            <section className="case-study__hero">
+                <div className="case-study__back">
+                    <Link to="/#work">← Back to work</Link>
+                </div>
+
+                <div className="case-study__meta">
+                    <span>{project.type}</span>
+                    <span>{project.year}</span>
+                </div>
+
+                <h1>{project.title}</h1>
+
+                <p className="case-study__intro">
+                    {project.description}
+                </p>
+
+                <div className="case-study__links">
+                    {project.live && (
+                        <a
+                            href={project.live}
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            Live project ↗
+                        </a>
+                    )}
+
+                    {project.github && (
+                        <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            GitHub ↗
+                        </a>
+                    )}
+                </div>
+            </section>
+
+            <section className="case-study__visual">
+                <div className="case-study__visual-placeholder">
+                    <span>{project.title}</span>
+                </div>
+            </section>
+
+            <section className="case-study__overview">
+                <p className="section-label">Overview</p>
+
+                <p className="case-study__large-copy">
+                    {project.overview}
+                </p>
+            </section>
+
+            <section className="case-study__split">
+                <article>
+                    <p className="section-label">Challenge</p>
+
+                    <p>{project.challenge}</p>
+                </article>
+
+                <article>
+                    <p className="section-label">Solution</p>
+
+                    <p>{project.solution}</p>
+                </article>
+            </section>
+
+            <section className="case-study__features">
+                <div>
+                    <p className="section-label">Key features</p>
+
+                    <h2>
+                        What I built.
+                    </h2>
+                </div>
+
+                <div className="case-study__feature-list">
+                    {project.features.map((feature, index) => (
+                        <div
+                            className="case-study__feature"
+                            key={feature}
+                        >
+                            <span>
+                                {String(index + 1).padStart(2, "0")}
+                            </span>
+
+                            <p>{feature}</p>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            <section className="case-study__stack">
+                <p className="section-label">Stack</p>
+
+                <div className="case-study__stack-list">
+                    {project.technologies.map((technology) => (
+                        <span key={technology}>
+                            {technology}
+                        </span>
+                    ))}
+                </div>
+            </section>
+
+            <section className="case-study__learning">
+                <p className="section-label">
+                    What I learned
+                </p>
+
+                <p className="case-study__large-copy">
+                    {project.learnings}
+                </p>
+            </section>
+
+            <section className="case-study__next">
+                <p>Explore more work</p>
+
+                <Link to="/#work">
+                    All projects →
+                </Link>
+            </section>
+        </main>
+    );
+}
+
+export default ProjectPage;

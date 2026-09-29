@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function ProjectCard({ project, index }) {
     return (
         <article
@@ -6,11 +8,13 @@ function ProjectCard({ project, index }) {
         >
             <div className="project-card__header">
                 <span className="project-card__number">{project.number}</span>
-
                 <span className="project-card__category">{project.category}</span>
             </div>
 
-            <a href={project.link} className="project-card__image-wrapper">
+            <Link
+                to={`/projects/${project.slug}`}
+                className="project-card__image-wrapper"
+            >
                 <div className="project-card__placeholder">
                     <span>{project.title}</span>
                 </div>
@@ -19,11 +23,15 @@ function ProjectCard({ project, index }) {
                     View project
                     <span>↗</span>
                 </span>
-            </a>
+            </Link>
 
             <div className="project-card__content">
                 <div className="project-card__copy">
-                    <h3>{project.title}</h3>
+                    <h3>
+                        <Link to={`/projects/${project.slug}`}>
+                            {project.title}
+                        </Link>
+                    </h3>
 
                     <p>{project.description}</p>
                 </div>
