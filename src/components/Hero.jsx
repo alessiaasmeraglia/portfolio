@@ -2,7 +2,9 @@ function Hero() {
     return (
         <section className="hero" id="home">
             <div className="hero__top">
-                <p className="hero__eyebrow">Front-end Developer · UX-minded</p>
+                <p className="hero__eyebrow">
+                    Full-stack Developer · UX-minded
+                </p>
 
                 <p className="hero__location">
                     Trento, Italy
@@ -13,15 +15,15 @@ function Hero() {
 
             <div className="hero__content">
                 <h1>
-                    I build digital
-                    <span> experiences.</span>
+                    Full-stack developer
+                    <span> with a UX mindset.</span>
                 </h1>
 
                 <div className="hero__bottom">
                     <p className="hero__description">
-                        Front-end developer with a background in UX and Human-Computer
-                        Interaction. I build accessible, intuitive and user-centered web
-                        experiences.
+                        I design and build accessible, responsive digital products with
+                        React, Node.js and modern web technologies, combining development
+                        with a strong focus on usability and user experience.
                     </p>
 
                     <a href="#work" className="hero__cta">

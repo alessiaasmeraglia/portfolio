@@ -34,7 +34,7 @@ function About() {
             <div className="about__grid">
                 <div className="about__intro">
                     <p className="about__lead">
-                        I&apos;m Alessia, a front-end developer with a background in
+                        I&apos;m Alessia, a full-stack developer with a background in
                         Human-Computer Interaction and UX.
                     </p>
 
@@ -60,7 +60,7 @@ function About() {
 
                     <div className="about__detail">
                         <span>Focus</span>
-                        <p>Front-end · Web Development · UX</p>
+                        <p>Full-stack Development · Front-end · UX</p>
                     </div>
 
                     <div className="about__detail">

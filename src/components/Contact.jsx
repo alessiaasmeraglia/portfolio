@@ -27,7 +27,7 @@ function Contact() {
             <footer className="footer">
                 <div className="footer__left">
                     <p>Alessia Smeraglia</p>
-                    <span>Front-end Developer · UX-minded</span>
+                    <span>Full-stack Developer · UX-minded</span>
                 </div>
 
                 <div className="footer__links">
