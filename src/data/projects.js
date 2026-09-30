@@ -172,76 +172,112 @@ const projects = [
         slug: "alla-grotta",
         number: "03",
         title: "Alla Grotta",
-        category: "Client project · Web Design",
+        category: "Client project · UX/UI · Web Development",
         type: "Client Work",
         year: "2025",
 
-        role: "Web Designer & Developer",
-        timeline: "2025",
-        status: "Client project",
+        role: "UX/UI Designer & Web Developer",
+        timeline: "Sep 2025 — Jan 2026",
+        status: "Real client project",
 
         description:
-            "Responsive restaurant website designed and developed for a real client, with a strong focus on usability and mobile experience.",
+            "A real-world restaurant website redesigned and rebuilt from scratch after a change in management, with a mobile-first focus on bookings, menu access and phone calls.",
 
         technologies: [
             "WordPress",
             "Elementor",
-            "UX",
-            "Responsive Design",
-            "Performance Optimization",
+            "Figma",
+            "GA4",
+            "UX Research",
+            "Information Architecture",
+            "Responsive Design"
         ],
 
-        image: "/images/alla-grotta.jpg",
+        image: "/images/alla-grotta-cover.jpg",
 
         github: null,
-        live: "#",
+        live: "https://www.pizzeriaallagrotta-trento.it/",
 
         overview:
-            "A website project developed for a local restaurant, focused on creating a clear, responsive and easy-to-maintain digital presence.",
+            "Alla Grotta is a real client project for a restaurant in Trento. Following a change in management, the previous website was no longer usable, so I redesigned and rebuilt the site from scratch with a mobile-first approach and a clear focus on the restaurant’s key user actions.",
 
         challenge:
-            "The website needed to communicate the restaurant identity while making essential information such as location, menu and booking options immediately accessible.",
+            "Users needed to find essential information quickly, especially on mobile. The main challenge was balancing clarity for customers with a simple content structure that the restaurant could maintain over time.",
 
         solution:
-            "I created a mobile-first WordPress website with a simplified information architecture, responsive layouts and clear calls to action.",
+            "I simplified the information architecture around three primary actions: Book, View Menu and Call. I designed the interface mobile-first, created clear and repeatable content patterns, and implemented the final website in WordPress while keeping usability, accessibility and maintainability in mind.",
 
-        features: [
-            "Responsive design",
-            "Mobile-first layout",
-            "Booking-oriented UX",
-            "Content organization",
-            "Performance optimization",
-            "WordPress maintenance",
+        contribution: [
+            "Collected stakeholder needs, priorities and operational constraints",
+            "Defined the information architecture and main user flows",
+            "Designed the interface with a mobile-first approach",
+            "Built the website in WordPress and Elementor",
+            "Improved accessibility, readability and CTA visibility",
+            "Set up GA4 tracking for key user actions",
+            "Used analytics insights to validate and refine priorities"
         ],
 
+        featuresTitle: "What I delivered.",
+
+        features: [
+            "Mobile-first responsive website",
+            "Clear booking, menu and call flows",
+            "Simplified information architecture",
+            "Accessible and readable interface",
+            "Reusable WordPress content structure",
+            "Google Analytics 4 event tracking",
+            "Performance and image optimization"
+        ],
+
+        insights: [
+            "Mobile users primarily need immediate access to booking, menu and phone actions.",
+            "Content hierarchy must be highly scannable, with clear titles and visible CTAs.",
+            "A maintainable structure is essential for a small business website to remain effective over time."
+        ],
+
+        metrics: [
+            {
+                label: "Tracked action",
+                value: "Phone clicks"
+            },
+            {
+                label: "Tracked action",
+                value: "Booking clicks"
+            },
+            {
+                label: "Tracked content",
+                value: "Menu views"
+            }
+        ],
+
+        results:
+            "Analytics showed strong mobile usage, with phone clicks emerging as a frequent action and the Menu page among the most visited areas. These signals confirmed the importance of keeping contact actions and menu access highly visible in the mobile experience.",
+
         learnings:
-            "Working with a real client helped me balance design decisions, technical constraints and practical business requirements.",
+            "This project reinforced that real-world UX is often about priorities and simplicity rather than adding features. It also strengthened my understanding of mobile-first information architecture, maintainable WordPress structures and using analytics to support design decisions.",
 
         screenshots: [
             {
                 src: "/images/alla-grotta-home.jpg",
                 alt: "Alla Grotta homepage",
-                label: "Homepage",
+                label: "Homepage"
             },
             {
                 src: "/images/alla-grotta-mobile.jpg",
-                alt: "Alla Grotta mobile website",
-                label: "Mobile experience",
+                alt: "Alla Grotta mobile experience",
+                label: "Mobile experience"
             },
             {
-                src: "/images/alla-grotta-booking.jpg",
-                alt: "Alla Grotta booking section",
-                label: "Booking experience",
+                src: "/images/alla-grotta-menu.jpg",
+                alt: "Alla Grotta menu page",
+                label: "Menu"
             },
-        ],
-        contribution: [
-            "Managed the project directly with the client",
-            "Designed the website structure and responsive layouts",
-            "Built the website with WordPress and Elementor",
-            "Improved mobile usability and booking visibility",
-            "Worked on performance optimization and maintenance",
-            "Organized content to make essential information easier to find",
-        ],
+            {
+                src: "/images/alla-grotta-contact.jpg",
+                alt: "Alla Grotta booking and contact actions",
+                label: "Booking & contact"
+            }
+        ]
     },
 
     {

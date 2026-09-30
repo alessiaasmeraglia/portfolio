@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import projects from "../data/projects";
 
@@ -6,21 +7,32 @@ function ProjectPage() {
 
     const project = projects.find((item) => item.slug === slug);
 
+    useEffect(() => {
+        if (project) {
+            document.title = `${project.title} — Alessia Smeraglia`;
+        }
+
+        return () => {
+            document.title =
+                "Alessia Smeraglia — Full-stack Developer & UX-minded";
+        };
+    }, [project]);
+
     if (!project) {
         return (
-            <main className="project-not-found">
+            <main className="project-not-found" id="main-content">
                 <p>404</p>
+
                 <h1>Project not found.</h1>
 
-                <Link to="/">
-                    ← Back home
-                </Link>
+                <Link to="/">← Back home</Link>
             </main>
         );
     }
 
     return (
-        <main className="case-study">
+        <main className="case-study" id="main-content">
+            {/* HERO */}
             <section className="case-study__hero">
                 <div className="case-study__back">
                     <Link to="/#work">← Back to work</Link>
@@ -36,6 +48,7 @@ function ProjectPage() {
                 <p className="case-study__intro">
                     {project.description}
                 </p>
+
                 <div className="case-study__project-info">
                     {project.role && (
                         <div>
@@ -82,12 +95,23 @@ function ProjectPage() {
                 </div>
             </section>
 
+            {/* HERO IMAGE */}
             <section className="case-study__visual">
-                <div className="case-study__visual-placeholder">
-                    <span>{project.title}</span>
-                </div>
+                {project.image ? (
+                    <div className="case-study__hero-image">
+                        <img
+                            src={project.image}
+                            alt={`${project.title} interface preview`}
+                        />
+                    </div>
+                ) : (
+                    <div className="case-study__visual-placeholder">
+                        <span>{project.title}</span>
+                    </div>
+                )}
             </section>
 
+            {/* OVERVIEW */}
             <section className="case-study__overview">
                 <div className="case-study__overview-label">
                     <p className="section-label">Overview</p>
@@ -102,6 +126,7 @@ function ProjectPage() {
                 </p>
             </section>
 
+            {/* CHALLENGE / SOLUTION */}
             <section className="case-study__split">
                 <article>
                     <p className="section-label">Challenge</p>
@@ -115,97 +140,202 @@ function ProjectPage() {
                     <p>{project.solution}</p>
                 </article>
             </section>
-            {project.contribution && project.contribution.length > 0 && (
-                <section className="case-study__contribution">
-                    <div className="case-study__contribution-heading">
-                        <p className="section-label">My contribution</p>
+
+            {/* INSIGHTS */}
+            {project.insights && project.insights.length > 0 && (
+                <section className="case-study__insights">
+                    <div className="case-study__insights-heading">
+                        <p className="section-label">
+                            Research & Insights
+                        </p>
 
                         <h2>
-                            What I worked
-                            <span> on.</span>
+                            What shaped the
+                            <span> experience.</span>
                         </h2>
                     </div>
 
-                    <div className="case-study__contribution-list">
-                        {project.contribution.map((item, index) => (
+                    <div className="case-study__insights-list">
+                        {project.insights.map((insight, index) => (
                             <div
-                                className="case-study__contribution-item"
-                                key={item}
+                                className="case-study__insight"
+                                key={insight}
                             >
                                 <span>
                                     {String(index + 1).padStart(2, "0")}
                                 </span>
 
-                                <p>{item}</p>
+                                <p>{insight}</p>
                             </div>
                         ))}
                     </div>
                 </section>
             )}
 
-            {project.screenshots && project.screenshots.length > 0 && (
-                <section className="case-study__gallery">
-                    <div className="case-study__gallery-heading">
-                        <p className="section-label">Interface</p>
+            {/* CONTRIBUTION */}
+            {project.contribution &&
+                project.contribution.length > 0 && (
+                    <section className="case-study__contribution">
+                        <div className="case-study__contribution-heading">
+                            <p className="section-label">
+                                My contribution
+                            </p>
 
-                        <h2>
-                            Designed around the
-                            <span> product experience.</span>
-                        </h2>
-                    </div>
+                            <h2>
+                                What I worked
+                                <span> on.</span>
+                            </h2>
+                        </div>
 
-                    <div className="case-study__gallery-grid">
-                        {project.screenshots.map((screenshot, index) => (
-                            <figure
-                                key={screenshot.src}
-                                className={`case-study__screenshot ${index === 0 ? "case-study__screenshot--large" : ""
-                                    }`}
-                            >
-                                <div className="case-study__screenshot-image">
-                                    <img
-                                        src={screenshot.src}
-                                        alt={screenshot.alt}
-                                    />
-                                </div>
-
-                                <figcaption>
+                        <div className="case-study__contribution-list">
+                            {project.contribution.map((item, index) => (
+                                <div
+                                    className="case-study__contribution-item"
+                                    key={item}
+                                >
                                     <span>
                                         {String(index + 1).padStart(2, "0")}
                                     </span>
 
-                                    <p>{screenshot.label}</p>
-                                </figcaption>
-                            </figure>
+                                    <p>{item}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+                )}
+
+            {/* GALLERY */}
+            {project.screenshots &&
+                project.screenshots.length > 0 && (
+                    <section className="case-study__gallery">
+                        <div className="case-study__gallery-heading">
+                            <p className="section-label">Interface</p>
+
+                            <h2>
+                                Designed around the
+                                <span> product experience.</span>
+                            </h2>
+                        </div>
+
+                        <div className="case-study__gallery-grid">
+                            {project.screenshots.map(
+                                (screenshot, index) => (
+                                    <figure
+                                        key={screenshot.src}
+                                        className={`case-study__screenshot ${index === 0
+                                                ? "case-study__screenshot--large"
+                                                : ""
+                                            }`}
+                                    >
+                                        <div className="case-study__screenshot-image">
+                                            <img
+                                                src={screenshot.src}
+                                                alt={screenshot.alt}
+                                                onError={(event) => {
+                                                    event.currentTarget.style.display =
+                                                        "none";
+
+                                                    event.currentTarget.parentElement.classList.add(
+                                                        "case-study__screenshot-placeholder"
+                                                    );
+                                                }}
+                                            />
+                                        </div>
+
+                                        <figcaption>
+                                            <span>
+                                                {String(index + 1).padStart(
+                                                    2,
+                                                    "0"
+                                                )}
+                                            </span>
+
+                                            <p>{screenshot.label}</p>
+                                        </figcaption>
+                                    </figure>
+                                )
+                            )}
+                        </div>
+                    </section>
+                )}
+
+            {/* FEATURES */}
+            {project.features &&
+                project.features.length > 0 && (
+                    <section className="case-study__features">
+                        <div>
+                            <p className="section-label">
+                                Key features
+                            </p>
+
+                            <h2>
+                                {project.featuresTitle ||
+                                    "What I built."}
+                            </h2>
+                        </div>
+
+                        <div className="case-study__feature-list">
+                            {project.features.map(
+                                (feature, index) => (
+                                    <div
+                                        className="case-study__feature"
+                                        key={feature}
+                                    >
+                                        <span>
+                                            {String(index + 1).padStart(
+                                                2,
+                                                "0"
+                                            )}
+                                        </span>
+
+                                        <p>{feature}</p>
+                                    </div>
+                                )
+                            )}
+                        </div>
+                    </section>
+                )}
+
+            {/* METRICS */}
+            {project.metrics && project.metrics.length > 0 && (
+                <section className="case-study__metrics">
+                    <div className="case-study__metrics-heading">
+                        <p className="section-label">
+                            Measurement
+                        </p>
+
+                        <h2>
+                            Tracking what
+                            <span> matters.</span>
+                        </h2>
+                    </div>
+
+                    <div className="case-study__metrics-grid">
+                        {project.metrics.map((metric) => (
+                            <article
+                                className="case-study__metric"
+                                key={`${metric.label}-${metric.value}`}
+                            >
+                                <span>{metric.label}</span>
+                                <p>{metric.value}</p>
+                            </article>
                         ))}
                     </div>
                 </section>
             )}
 
-            <section className="case-study__features">
-                <div>
-                    <p className="section-label">Key features</p>
+            {/* RESULTS */}
+            {project.results && (
+                <section className="case-study__results">
+                    <p className="section-label">Results</p>
 
-                    <h2>
-                        What I built.
-                    </h2>
-                </div>
+                    <p className="case-study__large-copy">
+                        {project.results}
+                    </p>
+                </section>
+            )}
 
-                <div className="case-study__feature-list">
-                    {project.features.map((feature, index) => (
-                        <div
-                            className="case-study__feature"
-                            key={feature}
-                        >
-                            <span>
-                                {String(index + 1).padStart(2, "0")}
-                            </span>
-
-                            <p>{feature}</p>
-                        </div>
-                    ))}
-                </div>
-            </section>
-
+            {/* STACK */}
             <section className="case-study__stack">
                 <p className="section-label">Stack</p>
 
@@ -218,6 +348,7 @@ function ProjectPage() {
                 </div>
             </section>
 
+            {/* LEARNINGS */}
             <section className="case-study__learning">
                 <p className="section-label">
                     What I learned
@@ -228,6 +359,7 @@ function ProjectPage() {
                 </p>
             </section>
 
+            {/* NEXT */}
             <section className="case-study__next">
                 <p>Explore more work</p>
 
