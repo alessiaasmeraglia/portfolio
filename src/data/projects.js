@@ -23,6 +23,7 @@ const projects = [
             "Express",
             "OpenAI API",
             "CSS",
+            "Bootstrap",
             "LocalStorage",
         ],
 

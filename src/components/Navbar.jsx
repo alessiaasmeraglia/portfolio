@@ -1,14 +1,37 @@
+import { Link, useLocation, useNavigate } from "react-router-dom";
+
 function Navbar() {
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const goToSection = (sectionId) => {
+        if (location.pathname === "/") {
+            document
+                .getElementById(sectionId)
+                ?.scrollIntoView({ behavior: "smooth" });
+        } else {
+            navigate(`/#${sectionId}`);
+        }
+    };
+
     return (
         <header className="navbar">
-            <a href="#home" className="navbar__brand">
+            <Link to="/" className="navbar__brand">
                 AS.
-            </a>
+            </Link>
 
             <nav className="navbar__links">
-                <a href="#work">Work</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
+                <button onClick={() => goToSection("work")}>
+                    Work
+                </button>
+
+                <button onClick={() => goToSection("about")}>
+                    About
+                </button>
+
+                <button onClick={() => goToSection("contact")}>
+                    Contact
+                </button>
             </nav>
         </header>
     );
