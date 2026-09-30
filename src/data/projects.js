@@ -73,6 +73,15 @@ const projects = [
                 label: "Comparison",
             },
         ],
+
+        contribution: [
+            "Designed the overall product experience and information architecture",
+            "Built reusable React components and page layouts",
+            "Implemented filtering, sorting, favorites and comparison flows",
+            "Managed shared state and LocalStorage persistence",
+            "Integrated the AI recommendation feature with an Express backend",
+            "Worked on responsive behavior, empty states and UX details",
+        ],
     },
 
     {
@@ -146,6 +155,15 @@ const projects = [
                 label: "Cart",
             },
         ],
+
+        contribution: [
+            "Worked on the front-end architecture and React components",
+            "Developed key user flows including cart, wishlist and checkout",
+            "Implemented recommended products in the product detail experience",
+            "Contributed to responsive UI and visual consistency",
+            "Collaborated with the team using Git and shared repositories",
+            "Integrated front-end features with REST API endpoints",
+        ],
     },
 
     {
@@ -215,6 +233,14 @@ const projects = [
                 label: "Booking experience",
             },
         ],
+        contribution: [
+            "Managed the project directly with the client",
+            "Designed the website structure and responsive layouts",
+            "Built the website with WordPress and Elementor",
+            "Improved mobile usability and booking visibility",
+            "Worked on performance optimization and maintenance",
+            "Organized content to make essential information easier to find",
+        ],
     },
 
     {
@@ -283,6 +309,13 @@ const projects = [
                 alt: "UX case study prototype",
                 label: "Prototype",
             },
+        ],
+        contribution: [
+            "Defined the UX problem and research goals",
+            "Analyzed user needs and pain points",
+            "Created user flows and wireframes",
+            "Designed interactive prototypes",
+            "Evaluated usability and iterated on design decisions",
         ],
     },
 ];

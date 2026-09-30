@@ -60,7 +60,7 @@ function ProjectPage() {
                 </div>
 
                 <div className="case-study__links">
-                    {project.live && (
+                    {project.live && project.live !== "#" && (
                         <a
                             href={project.live}
                             target="_blank"
@@ -70,7 +70,7 @@ function ProjectPage() {
                         </a>
                     )}
 
-                    {project.github && (
+                    {project.github && project.github !== "#" && (
                         <a
                             href={project.github}
                             target="_blank"
@@ -115,6 +115,33 @@ function ProjectPage() {
                     <p>{project.solution}</p>
                 </article>
             </section>
+            {project.contribution && project.contribution.length > 0 && (
+                <section className="case-study__contribution">
+                    <div className="case-study__contribution-heading">
+                        <p className="section-label">My contribution</p>
+
+                        <h2>
+                            What I worked
+                            <span> on.</span>
+                        </h2>
+                    </div>
+
+                    <div className="case-study__contribution-list">
+                        {project.contribution.map((item, index) => (
+                            <div
+                                className="case-study__contribution-item"
+                                key={item}
+                            >
+                                <span>
+                                    {String(index + 1).padStart(2, "0")}
+                                </span>
+
+                                <p>{item}</p>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+            )}
 
             {project.screenshots && project.screenshots.length > 0 && (
                 <section className="case-study__gallery">
