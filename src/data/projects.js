@@ -23,7 +23,7 @@ const projects = [
             "Express",
             "OpenAI API",
             "CSS",
-            "LocalStorage"
+            "LocalStorage",
         ],
 
         image: "/images/climbcompare.jpg",
@@ -50,11 +50,29 @@ const projects = [
             "Responsive interface",
             "Empty states and reset filters",
             "404 handling",
-            "AI-assisted climbing shoe recommendations"
+            "AI-assisted climbing shoe recommendations",
         ],
 
         learnings:
-            "ClimbCompare helped me move beyond building isolated interface components and think more in terms of product architecture. I worked with shared state, reusable components, persistence, API integration and UX decisions across a complete user flow."
+            "ClimbCompare helped me move beyond building isolated interface components and think more in terms of product architecture. I worked with shared state, reusable components, persistence, API integration and UX decisions across a complete user flow.",
+
+        screenshots: [
+            {
+                src: "/images/climbcompare-home.jpg",
+                alt: "ClimbCompare homepage",
+                label: "Homepage",
+            },
+            {
+                src: "/images/climbcompare-catalogue.jpg",
+                alt: "ClimbCompare catalogue",
+                label: "Catalogue",
+            },
+            {
+                src: "/images/climbcompare-compare.jpg",
+                alt: "ClimbCompare product comparison",
+                label: "Comparison",
+            },
+        ],
     },
 
     {
@@ -66,15 +84,26 @@ const projects = [
         type: "Development",
         year: "2026",
 
+        role: "Front-end Developer",
+        timeline: "2026",
+        status: "Team project",
+
         description:
             "A fantasy-inspired e-commerce experience featuring cart management, wishlist, checkout and product recommendations.",
 
-        technologies: ["React", "Node.js", "Express", "MySQL"],
+        technologies: [
+            "React",
+            "JavaScript",
+            "Node.js",
+            "Express",
+            "MySQL",
+            "Bootstrap",
+        ],
 
         image: "/images/jsons-quest.jpg",
 
         github: "#",
-        live: "#",
+        live: null,
 
         overview:
             "JSON's Quest is a team-developed fantasy e-commerce application combining product discovery, cart management and a themed interface.",
@@ -94,10 +123,29 @@ const projects = [
             "Recommended products",
             "Newsletter subscription",
             "404 page",
+            "Responsive interface",
         ],
 
         learnings:
             "Working in a team strengthened my understanding of component organization, Git workflows and coordinating front-end development with API and database requirements.",
+
+        screenshots: [
+            {
+                src: "/images/jsons-quest-home.jpg",
+                alt: "JSON's Quest homepage",
+                label: "Homepage",
+            },
+            {
+                src: "/images/jsons-quest-product.jpg",
+                alt: "JSON's Quest product detail page",
+                label: "Product detail",
+            },
+            {
+                src: "/images/jsons-quest-cart.jpg",
+                alt: "JSON's Quest shopping cart",
+                label: "Cart",
+            },
+        ],
     },
 
     {
@@ -109,10 +157,20 @@ const projects = [
         type: "Client Work",
         year: "2025",
 
+        role: "Web Designer & Developer",
+        timeline: "2025",
+        status: "Client project",
+
         description:
             "Responsive restaurant website designed and developed for a real client, with a strong focus on usability and mobile experience.",
 
-        technologies: ["WordPress", "Elementor", "UX", "Responsive Design"],
+        technologies: [
+            "WordPress",
+            "Elementor",
+            "UX",
+            "Responsive Design",
+            "Performance Optimization",
+        ],
 
         image: "/images/alla-grotta.jpg",
 
@@ -139,6 +197,24 @@ const projects = [
 
         learnings:
             "Working with a real client helped me balance design decisions, technical constraints and practical business requirements.",
+
+        screenshots: [
+            {
+                src: "/images/alla-grotta-home.jpg",
+                alt: "Alla Grotta homepage",
+                label: "Homepage",
+            },
+            {
+                src: "/images/alla-grotta-mobile.jpg",
+                alt: "Alla Grotta mobile website",
+                label: "Mobile experience",
+            },
+            {
+                src: "/images/alla-grotta-booking.jpg",
+                alt: "Alla Grotta booking section",
+                label: "Booking experience",
+            },
+        ],
     },
 
     {
@@ -150,10 +226,20 @@ const projects = [
         type: "UX / Product",
         year: "2026",
 
+        role: "UX Designer",
+        timeline: "2026",
+        status: "Case study",
+
         description:
             "A user-centered design case study exploring research, interaction design and usability.",
 
-        technologies: ["UX Research", "Figma", "Prototyping"],
+        technologies: [
+            "UX Research",
+            "Figma",
+            "Wireframing",
+            "Prototyping",
+            "Usability",
+        ],
 
         image: "/images/ux-case-study.jpg",
 
@@ -180,6 +266,24 @@ const projects = [
 
         learnings:
             "The project strengthened my ability to connect qualitative insights with concrete interface decisions.",
+
+        screenshots: [
+            {
+                src: "/images/ux-case-study-overview.jpg",
+                alt: "UX case study overview",
+                label: "Overview",
+            },
+            {
+                src: "/images/ux-case-study-wireframes.jpg",
+                alt: "UX case study wireframes",
+                label: "Wireframes",
+            },
+            {
+                src: "/images/ux-case-study-prototype.jpg",
+                alt: "UX case study prototype",
+                label: "Prototype",
+            },
+        ],
     },
 ];
 

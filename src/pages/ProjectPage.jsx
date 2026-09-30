@@ -116,6 +116,44 @@ function ProjectPage() {
                 </article>
             </section>
 
+            {project.screenshots && project.screenshots.length > 0 && (
+                <section className="case-study__gallery">
+                    <div className="case-study__gallery-heading">
+                        <p className="section-label">Interface</p>
+
+                        <h2>
+                            Designed around the
+                            <span> product experience.</span>
+                        </h2>
+                    </div>
+
+                    <div className="case-study__gallery-grid">
+                        {project.screenshots.map((screenshot, index) => (
+                            <figure
+                                key={screenshot.src}
+                                className={`case-study__screenshot ${index === 0 ? "case-study__screenshot--large" : ""
+                                    }`}
+                            >
+                                <div className="case-study__screenshot-image">
+                                    <img
+                                        src={screenshot.src}
+                                        alt={screenshot.alt}
+                                    />
+                                </div>
+
+                                <figcaption>
+                                    <span>
+                                        {String(index + 1).padStart(2, "0")}
+                                    </span>
+
+                                    <p>{screenshot.label}</p>
+                                </figcaption>
+                            </figure>
+                        ))}
+                    </div>
+                </section>
+            )}
+
             <section className="case-study__features">
                 <div>
                     <p className="section-label">Key features</p>
