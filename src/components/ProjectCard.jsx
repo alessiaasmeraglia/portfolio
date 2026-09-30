@@ -7,13 +7,19 @@ function ProjectCard({ project, index }) {
                 }`}
         >
             <div className="project-card__header">
-                <span className="project-card__number">{project.number}</span>
+                <div className="project-card__meta">
+                    <span className="project-card__number">{project.number}</span>
+
+                    <span className="project-card__type">{project.type}</span>
+                </div>
+
                 <span className="project-card__category">{project.category}</span>
             </div>
 
             <Link
                 to={`/projects/${project.slug}`}
                 className="project-card__image-wrapper"
+                aria-label={`View ${project.title} project`}
             >
                 <div className="project-card__placeholder">
                     <span>{project.title}</span>
@@ -21,7 +27,7 @@ function ProjectCard({ project, index }) {
 
                 <span className="project-card__view">
                     View project
-                    <span>↗</span>
+                    <span aria-hidden="true">↗</span>
                 </span>
             </Link>
 
@@ -29,7 +35,16 @@ function ProjectCard({ project, index }) {
                 <div className="project-card__copy">
                     <h3>
                         <Link to={`/projects/${project.slug}`}>
-                            {project.title}
+                            <span className="project-card__title-text">
+                                {project.title}
+                            </span>
+
+                            <span
+                                className="project-card__title-arrow"
+                                aria-hidden="true"
+                            >
+                                ↗
+                            </span>
                         </Link>
                     </h3>
 
@@ -37,7 +52,7 @@ function ProjectCard({ project, index }) {
                 </div>
 
                 <div className="project-card__technologies">
-                    {project.technologies.map((technology) => (
+                    {project.technologies.slice(0, 5).map((technology) => (
                         <span key={technology}>{technology}</span>
                     ))}
                 </div>
