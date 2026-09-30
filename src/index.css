@@ -1302,6 +1302,58 @@ img {
 }
 
 /* =========================
+   404 PAGE
+   ========================= */
+
+.not-found {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 8rem 3rem 4rem;
+}
+
+.not-found h1 {
+    max-width: 1200px;
+
+    margin-bottom: 2rem;
+
+    font-size: clamp(4rem, 10vw, 10rem);
+    font-weight: 500;
+
+    line-height: 0.85;
+    letter-spacing: -0.075em;
+}
+
+.not-found__text {
+    max-width: 520px;
+
+    margin-bottom: 3rem;
+
+    font-size: 1rem;
+    line-height: 1.6;
+
+    color: var(--muted);
+}
+
+.not-found__link {
+    align-self: flex-start;
+
+    padding-bottom: 0.4rem;
+
+    border-bottom: 1px solid var(--text);
+
+    font-size: 0.8rem;
+    font-weight: 500;
+
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+
+/* =========================
    ANIMATIONS
    ========================= */
 
@@ -1615,6 +1667,10 @@ img {
 
     .experience__period {
         grid-column: 2;
+    }
+
+    .not-found {
+        padding: 7rem 1.25rem 3rem;
     }
 }
 

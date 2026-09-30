@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import ScrollToHash from "./components/ScrollToHash";
 import HomePage from "./pages/HomePage";
 import ProjectPage from "./pages/ProjectPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
     return (
@@ -17,6 +18,8 @@ function App() {
                     path="/projects/:slug"
                     element={<ProjectPage />}
                 />
+
+                <Route path="*" element={<NotFoundPage />} />
             </Routes>
         </>
     );
