@@ -8,45 +8,53 @@ const projects = [
         type: "Development",
         year: "2026",
 
+        role: "Front-end & Full-stack Developer",
+        timeline: "2026",
+        status: "Personal project",
+
         description:
             "An AI-powered climbing shoe comparison platform designed to help climbers explore models, compare products and find shoes suited to their needs.",
 
         technologies: [
             "React",
             "JavaScript",
-            "Express",
+            "Vite",
             "Node.js",
+            "Express",
             "OpenAI API",
             "CSS",
+            "LocalStorage"
         ],
 
         image: "/images/climbcompare.jpg",
 
-        github: "#",
-        live: "#",
+        github: "https://github.com/alessiaasmeraglia",
+        live: null,
 
         overview:
-            "ClimbCompare is a web application built around a climbing shoe catalogue and comparison experience. The project combines product discovery, comparison tools, saved items and an AI-assisted recommendation feature.",
+            "ClimbCompare is a web application built around a climbing shoe catalogue and comparison experience. It combines product discovery, filtering, favorites, side-by-side comparison and an AI-assisted recommendation feature in a single interface.",
 
         challenge:
-            "Choosing climbing shoes can be difficult because models differ significantly in fit, stiffness, shape and intended use. Product information is often scattered across different websites and difficult to compare directly.",
+            "Choosing climbing shoes can be difficult because models differ in fit, stiffness, shape and intended use. Product information is often fragmented across different sources, making it hard to compare models directly and understand which shoe may be suitable for a specific climber.",
 
         solution:
-            "I designed ClimbCompare as a centralized interface where users can explore climbing shoes, filter the catalogue, save models, compare two products side by side and receive AI-assisted recommendations.",
+            "I designed ClimbCompare as a centralized product experience where users can browse climbing shoes, search and filter the catalogue, save favorites, compare two models side by side and receive AI-assisted recommendations based on their preferences.",
 
         features: [
-            "Search and category filtering",
+            "Search with debounce",
+            "Category filtering",
             "Alphabetical sorting",
             "Detailed product pages",
             "Two-product comparison",
-            "Favorites stored locally",
-            "AI-assisted shoe recommendations",
+            "Favorites stored with LocalStorage",
             "Responsive interface",
-            "Empty states and error handling",
+            "Empty states and reset filters",
+            "404 handling",
+            "AI-assisted climbing shoe recommendations"
         ],
 
         learnings:
-            "This project allowed me to combine front-end architecture, state management and API integration while keeping usability at the center of the experience.",
+            "ClimbCompare helped me move beyond building isolated interface components and think more in terms of product architecture. I worked with shared state, reusable components, persistence, API integration and UX decisions across a complete user flow."
     },
 
     {

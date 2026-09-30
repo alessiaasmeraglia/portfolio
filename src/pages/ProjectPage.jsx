@@ -36,6 +36,28 @@ function ProjectPage() {
                 <p className="case-study__intro">
                     {project.description}
                 </p>
+                <div className="case-study__project-info">
+                    {project.role && (
+                        <div>
+                            <span>Role</span>
+                            <p>{project.role}</p>
+                        </div>
+                    )}
+
+                    {project.timeline && (
+                        <div>
+                            <span>Timeline</span>
+                            <p>{project.timeline}</p>
+                        </div>
+                    )}
+
+                    {project.status && (
+                        <div>
+                            <span>Type</span>
+                            <p>{project.status}</p>
+                        </div>
+                    )}
+                </div>
 
                 <div className="case-study__links">
                     {project.live && (
@@ -67,7 +89,13 @@ function ProjectPage() {
             </section>
 
             <section className="case-study__overview">
-                <p className="section-label">Overview</p>
+                <div className="case-study__overview-label">
+                    <p className="section-label">Overview</p>
+
+                    <p>
+                        From product idea to interface and implementation.
+                    </p>
+                </div>
 
                 <p className="case-study__large-copy">
                     {project.overview}

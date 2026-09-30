@@ -1097,21 +1097,27 @@ img {
 /* =========================
    OVERVIEW
    ========================= */
-
 .case-study__overview {
+    display: grid;
+
+    grid-template-columns: 0.7fr 2fr;
+
+    gap: 5rem;
+
     padding: 10rem 3rem;
 
     border-bottom: 1px solid var(--border);
 }
 
-.case-study__large-copy {
-    max-width: 1200px;
+.case-study__overview-label {
+    max-width: 260px;
+}
 
-    font-size: clamp(2.5rem, 5vw, 5rem);
-    font-weight: 500;
+.case-study__overview-label>p:last-child {
+    font-size: 0.9rem;
+    line-height: 1.6;
 
-    line-height: 1.05;
-    letter-spacing: -0.045em;
+    color: var(--muted);
 }
 
 /* =========================
@@ -1311,6 +1317,45 @@ img {
 }
 
 /* =========================
+   PROJECT INFO
+   ========================= */
+
+.case-study__project-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 2rem;
+
+    max-width: 900px;
+
+    margin-top: 4rem;
+    padding-top: 2rem;
+
+    border-top: 1px solid var(--border);
+}
+
+.case-study__project-info div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.6rem;
+}
+
+.case-study__project-info span {
+    font-size: 0.68rem;
+
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+
+    color: var(--muted);
+}
+
+.case-study__project-info p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* =========================
    SMALL MOBILE
    ========================= */
 
@@ -1346,6 +1391,12 @@ img {
 
     .project-card__placeholder span {
         font-size: clamp(2rem, 12vw, 4rem);
+    }
+
+    .case-study__project-info {
+        grid-template-columns: 1fr;
+
+        gap: 1.5rem;
     }
 }
 
@@ -1480,6 +1531,14 @@ img {
         align-items: flex-start;
 
         padding: 4rem 1.25rem;
+    }
+
+    .case-study__overview {
+        grid-template-columns: 1fr;
+
+        gap: 2.5rem;
+
+        padding: 6rem 1.25rem;
     }
 }
 
