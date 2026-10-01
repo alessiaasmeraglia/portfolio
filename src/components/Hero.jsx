@@ -8,8 +8,11 @@ function Hero() {
 
                 <p className="hero__location">
                     Trento, Italy
-                    <br />
-                    Available for opportunities
+
+                    <span className="hero__availability">
+                        <span className="hero__availability-dot" aria-hidden="true"></span>
+                        Available for opportunities
+                    </span>
                 </p>
             </div>
 
