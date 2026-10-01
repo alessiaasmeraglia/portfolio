@@ -27,7 +27,7 @@ const projects = [
             "LocalStorage",
         ],
 
-        image: "/images/climbcompare.jpg",
+        image: "/images/climbcompare-cover.jpg",
 
         github: "https://github.com/alessiaasmeraglia",
         live: null,
@@ -60,18 +60,28 @@ const projects = [
         screenshots: [
             {
                 src: "/images/climbcompare-home.jpg",
-                alt: "ClimbCompare homepage",
+                alt: "ClimbCompare homepage introducing the climbing shoe comparison experience",
                 label: "Homepage",
             },
             {
                 src: "/images/climbcompare-catalogue.jpg",
-                alt: "ClimbCompare catalogue",
-                label: "Catalogue",
+                alt: "ClimbCompare catalogue with search, filters and climbing shoe cards",
+                label: "Catalogue & filtering",
             },
             {
                 src: "/images/climbcompare-compare.jpg",
-                alt: "ClimbCompare product comparison",
-                label: "Comparison",
+                alt: "ClimbCompare side-by-side climbing shoe comparison",
+                label: "Product comparison",
+            },
+            {
+                src: "/images/climbcompare-ai.jpg",
+                alt: "ClimbCompare AI-assisted climbing shoe recommendation",
+                label: "AI recommendation",
+            },
+            {
+                src: "/images/climbcompare-detail.jpg",
+                alt: "ClimbCompare climbing shoe detail page",
+                label: "Product detail",
             },
         ],
 
@@ -110,7 +120,7 @@ const projects = [
             "Bootstrap",
         ],
 
-        image: "/images/jsons-quest.jpg",
+        image: "/images/jsons-quest-cover.jpg",
 
         github: "#",
         live: null,
