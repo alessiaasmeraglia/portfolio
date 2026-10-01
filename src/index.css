@@ -1986,8 +1986,8 @@ button:focus-visible {
     }
 
     .hero__location {
-        align-self: flex-start;
-        text-align: left;
+        align-self: flex-end;
+        text-align: right;
     }
 
     .hero h1 {
