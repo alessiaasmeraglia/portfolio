@@ -109,7 +109,7 @@ const projects = [
         status: "Team project",
 
         description:
-            "A fantasy-inspired e-commerce experience featuring cart management, wishlist, checkout and product recommendations.",
+            "A fantasy-inspired e-commerce platform developed as a team project, with a strong focus on product discovery, cart flows and a cohesive themed interface.",
 
         technologies: [
             "React",
@@ -118,21 +118,36 @@ const projects = [
             "Express",
             "MySQL",
             "Bootstrap",
+            "REST API",
+            "Git"
         ],
 
         image: "/images/jsons-quest-cover.jpg",
 
-        github: "#",
+        github: null,
         live: null,
 
         overview:
-            "JSON's Quest is a team-developed fantasy e-commerce application combining product discovery, cart management and a themed interface.",
+            "JSON's Quest is a full-stack e-commerce project developed in a team. The platform combines a fantasy-inspired visual identity with standard shopping flows such as catalogue browsing, product detail, cart, wishlist and checkout.",
 
         challenge:
-            "The project required coordinating front-end and back-end features while maintaining a consistent visual identity across a relatively complex e-commerce flow.",
+            "The main challenge was building a relatively complex e-commerce experience while keeping the interface consistent across different pages and coordinating front-end work with the rest of the team.",
 
         solution:
-            "We created a modular React interface backed by Express and MySQL, with dedicated flows for product browsing, wishlist, cart, checkout and related products.",
+            "We built the application with React on the front end and a Node.js, Express and MySQL stack on the back end. The interface was structured around reusable components and clear shopping flows, while preserving the fantasy theme across the experience.",
+
+        contribution: [
+            "Worked on the front-end architecture and React components",
+            "Developed the homepage and product detail experience",
+            "Worked on cart and wishlist interactions",
+            "Contributed to the checkout flow",
+            "Implemented recommended products",
+            "Worked on header, footer and responsive styling",
+            "Contributed to the product and category data structure",
+            "Collaborated with the team using Git and shared repositories"
+        ],
+
+        featuresTitle: "Core experience.",
 
         features: [
             "Product catalogue",
@@ -142,39 +157,40 @@ const projects = [
             "Checkout flow",
             "Recommended products",
             "Newsletter subscription",
-            "404 page",
             "Responsive interface",
+            "404 page"
         ],
 
         learnings:
-            "Working in a team strengthened my understanding of component organization, Git workflows and coordinating front-end development with API and database requirements.",
+            "This project strengthened my ability to work in a shared codebase, coordinate front-end development with back-end requirements and maintain consistency across a multi-page e-commerce experience.",
 
         screenshots: [
             {
                 src: "/images/jsons-quest-home.jpg",
-                alt: "JSON's Quest homepage",
-                label: "Homepage",
+                alt: "JSON's Quest fantasy e-commerce homepage",
+                label: "Homepage"
             },
             {
                 src: "/images/jsons-quest-product.jpg",
                 alt: "JSON's Quest product detail page",
-                label: "Product detail",
+                label: "Product detail"
             },
             {
                 src: "/images/jsons-quest-cart.jpg",
                 alt: "JSON's Quest shopping cart",
-                label: "Cart",
+                label: "Cart"
             },
-        ],
-
-        contribution: [
-            "Worked on the front-end architecture and React components",
-            "Developed key user flows including cart, wishlist and checkout",
-            "Implemented recommended products in the product detail experience",
-            "Contributed to responsive UI and visual consistency",
-            "Collaborated with the team using Git and shared repositories",
-            "Integrated front-end features with REST API endpoints",
-        ],
+            {
+                src: "/images/jsons-quest-wishlist.jpg",
+                alt: "JSON's Quest wishlist",
+                label: "Wishlist"
+            },
+            {
+                src: "/images/jsons-quest-checkout.jpg",
+                alt: "JSON's Quest checkout flow",
+                label: "Checkout"
+            }
+        ]
     },
 
     {
