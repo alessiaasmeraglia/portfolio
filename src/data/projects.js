@@ -308,78 +308,111 @@ const projects = [
 
     {
         id: 4,
-        slug: "ux-case-study",
+        slug: "monte-bondone-ski",
         number: "04",
-        title: "UX Case Study",
-        category: "UX · Product Design",
+        title: "Monte Bondone Ski",
+        category: "UX Research · Service Design",
         type: "UX / Product",
-        year: "2026",
+        year: "2024",
 
-        role: "UX Designer",
-        timeline: "2026",
-        status: "Case study",
+        role: "UX Researcher & Designer",
+        timeline: "Mar 2024 — Jun 2024",
+        status: "University project · Collaboration with Trento Funivie",
 
         description:
-            "A user-centered design case study exploring research, interaction design and usability.",
+            "An end-to-end UX Research and Service Design project focused on the ski pass experience, from user research to mobile-first digital flows.",
 
         technologies: [
             "UX Research",
+            "Service Design",
             "Figma",
-            "Wireframing",
-            "Prototyping",
-            "Usability",
+            "Miro",
+            "Interviews",
+            "Questionnaires",
+            "User Journey",
+            "Service Blueprint",
+            "Information Architecture",
+            "User Flow",
+            "Wireframing"
         ],
 
-        image: "/images/ux-case-study.jpg",
+        image: "/images/monte-bondone-cover.jpg",
 
         github: null,
-        live: null,
+
+        live:
+            "https://www.figma.com/proto/LaSStNfrpadayNYshWtq2T/Monte-Bondone-Ski?node-id=62-2&starting-point-node-id=4%3A185",
 
         overview:
-            "A UX case study focused on understanding user needs and translating research findings into interface and interaction decisions.",
+            "Monte Bondone Ski is a UX Research and Service Design project developed at the University of Trento in collaboration with Trento Funivie. The project explored the end-to-end ski pass experience across digital and physical touchpoints, with particular attention to mobile use.",
 
         challenge:
-            "The project explored how usability issues could be identified through research and translated into clearer user flows.",
+            "The ski pass experience involves multiple stages and channels, from searching for information and choosing the right option to purchasing, managing and using the pass on site. The challenge was to identify where friction occurred across the overall service, rather than focusing only on individual interface issues.",
 
         solution:
-            "The process combined research, synthesis, prototyping and iterative design decisions to improve the user experience.",
+            "I combined qualitative and quantitative research to identify recurring user needs and pain points. The findings were translated into user journeys, a service blueprint, information architecture and simplified mobile-first user flows designed to make key decisions and actions clearer.",
+
+        insights: [
+            "Users need quick and easily scannable information when making decisions, especially on mobile.",
+            "Friction often appears between orientation, selection and the final action rather than within a single screen.",
+            "Information hierarchy and content clarity are essential to help users understand available options.",
+            "The digital experience needs to reflect the operational reality of the wider service."
+        ],
+
+        contribution: [
+            "Contributed to qualitative and quantitative UX research",
+            "Worked with interviews and questionnaires",
+            "Synthesized research findings into recurring insights",
+            "Mapped the end-to-end user journey",
+            "Developed a service blueprint across customer and service touchpoints",
+            "Worked on information architecture and user flows",
+            "Designed mobile-first wireframes in Figma"
+        ],
+
+        featuresTitle: "The design process.",
 
         features: [
             "User research",
-            "Problem definition",
+            "Interviews",
+            "Questionnaires",
+            "Insight synthesis",
+            "User journey mapping",
+            "Service blueprint",
+            "Information architecture",
             "User flows",
-            "Wireframing",
-            "Prototyping",
-            "Usability considerations",
+            "Mobile wireframes"
         ],
 
         learnings:
-            "The project strengthened my ability to connect qualitative insights with concrete interface decisions.",
+            "This project strengthened my understanding that service experience problems are not always interface problems. Mapping the entire journey helped me connect user expectations, digital touchpoints and operational processes before moving into interface design.",
 
         screenshots: [
             {
-                src: "/images/ux-case-study-overview.jpg",
-                alt: "UX case study overview",
-                label: "Overview",
+                src: "/images/monte-bondone-research.jpg",
+                alt: "Monte Bondone Ski UX research and insight synthesis",
+                label: "Research & insights"
             },
             {
-                src: "/images/ux-case-study-wireframes.jpg",
-                alt: "UX case study wireframes",
-                label: "Wireframes",
+                src: "/images/monte-bondone-journey.jpg",
+                alt: "Monte Bondone Ski user journey map",
+                label: "User journey"
             },
             {
-                src: "/images/ux-case-study-prototype.jpg",
-                alt: "UX case study prototype",
-                label: "Prototype",
+                src: "/images/monte-bondone-blueprint.jpg",
+                alt: "Monte Bondone Ski service blueprint",
+                label: "Service blueprint"
             },
-        ],
-        contribution: [
-            "Defined the UX problem and research goals",
-            "Analyzed user needs and pain points",
-            "Created user flows and wireframes",
-            "Designed interactive prototypes",
-            "Evaluated usability and iterated on design decisions",
-        ],
+            {
+                src: "/images/monte-bondone-flow.jpg",
+                alt: "Monte Bondone Ski mobile user flow",
+                label: "User flow"
+            },
+            {
+                src: "/images/monte-bondone-wireframes.jpg",
+                alt: "Monte Bondone Ski mobile wireframes",
+                label: "Mobile wireframes"
+            }
+        ]
     },
 ];
 

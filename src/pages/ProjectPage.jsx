@@ -79,7 +79,7 @@ function ProjectPage() {
                             target="_blank"
                             rel="noreferrer"
                         >
-                            Live project ↗
+                            {project.liveLabel || "Live project ↗"}
                         </a>
                     )}
 
