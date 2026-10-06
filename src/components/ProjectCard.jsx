@@ -21,9 +21,17 @@ function ProjectCard({ project, index }) {
                 className="project-card__image-wrapper"
                 aria-label={`View ${project.title} project`}
             >
-                <div className="project-card__placeholder">
-                    <span>{project.title}</span>
-                </div>
+                {project.image ? (
+                    <img
+                        src={project.image}
+                        alt={`${project.title} project preview`}
+                        className="project-card__image"
+                    />
+                ) : (
+                    <div className="project-card__placeholder">
+                        <span>{project.title}</span>
+                    </div>
+                )}
 
                 <span className="project-card__view">
                     View project
