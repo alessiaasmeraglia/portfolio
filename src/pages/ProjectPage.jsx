@@ -27,7 +27,7 @@ function ProjectPage() {
 
                 <h1>Project not found.</h1>
 
-                <Link to="/">← Back home</Link>
+                <Link to="/"><i className="bi bi-arrow-left" aria-hidden="true"></i> Back home</Link>
             </main>
         );
     }
@@ -37,7 +37,7 @@ function ProjectPage() {
             {/* HERO */}
             <section className="case-study__hero">
                 <div className="case-study__back">
-                    <Link to="/#work">← Back to work</Link>
+                    <Link to="/#work"><i className="bi bi-arrow-left" aria-hidden="true"></i> Back to work</Link>
                 </div>
 
                 <div className="case-study__meta">
@@ -91,7 +91,7 @@ function ProjectPage() {
                             target="_blank"
                             rel="noreferrer"
                         >
-                            GitHub ↗
+                            GitHub <i className="bi bi-arrow-up-right" aria-hidden="true"></i>
                         </a>
                     )}
                 </div>
@@ -273,7 +273,7 @@ function ProjectPage() {
                                 className="project-page__case-study-button"
                                 onClick={() => setIsCaseStudyOpen(true)}
                             >
-                                View full UX project ↗
+                                View full UX project <i className="bi bi-arrow-up-right" aria-hidden="true"></i>
                             </button>
                         )}
                         {isCaseStudyOpen && project.fullCaseStudy && (
@@ -294,7 +294,7 @@ function ProjectPage() {
                                         onClick={() => setIsCaseStudyOpen(false)}
                                         aria-label="Close full case study"
                                     >
-                                        ×
+                                        <i className="bi bi-x-lg" aria-hidden="true"></i>
                                     </button>
 
                                     <img

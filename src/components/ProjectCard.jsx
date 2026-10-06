@@ -35,7 +35,9 @@ function ProjectCard({ project, index }) {
 
                 <span className="project-card__view">
                     View project
-                    <span aria-hidden="true">↗</span>
+                    <span aria-hidden="true">
+                        <i className="bi bi-arrow-up-right" aria-hidden="true"></i>
+                    </span>
                 </span>
             </Link>
 

@@ -20,7 +20,7 @@ function Contact() {
                     className="contact__email"
                 >
                     Get in touch
-                    <span aria-hidden="true">↗</span>
+                    <span aria-hidden="true"><i className="bi bi-arrow-up-right" aria-hidden="true"></i></span>
                 </a>
             </div>
 
@@ -36,7 +36,8 @@ function Contact() {
                         target="_blank"
                         rel="noreferrer"
                     >
-                        GitHub ↗
+                        GitHub 
+                        <i className="bi bi-arrow-up-right" aria-hidden="true"></i>
                     </a>
 
                     <a
@@ -44,7 +45,9 @@ function Contact() {
                         target="_blank"
                         rel="noreferrer"
                     >
-                        LinkedIn ↗
+                        LinkedIn 
+                        <i className="bi bi-arrow-up-right" aria-hidden="true"></i>
+
                     </a>
                 </div>
 

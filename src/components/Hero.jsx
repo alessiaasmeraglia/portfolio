@@ -31,7 +31,7 @@ function Hero() {
 
                     <a href="#work" className="hero__cta">
                         View my work
-                        <span aria-hidden="true">↓</span>
+                        <i className="bi bi-arrow-down" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
