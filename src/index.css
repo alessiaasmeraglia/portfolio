@@ -166,6 +166,7 @@ img {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    width: 100%;
 }
 
 .hero__eyebrow,
@@ -176,13 +177,20 @@ img {
     letter-spacing: 0.08em;
 }
 
+.hero__eyebrow {
+    position: fixed;
+    top: 6.5rem;
+    left: 3rem;
+    z-index: 50;
+    pointer-events: none;
+}
+
 .hero__location {
+    margin-left: auto;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-
     gap: 0.35rem;
-
     text-align: right;
     color: var(--muted);
 }
@@ -1744,6 +1752,17 @@ button:focus-visible {
     .hero__eyebrow,
     .hero__location {
         font-size: 0.65rem;
+    }
+
+    .hero__eyebrow {
+        position: static;
+        pointer-events: auto;
+    }
+
+    .hero__location {
+        margin-left: auto;
+        align-items: flex-end;
+        text-align: right;
     }
 
     .hero__content {
