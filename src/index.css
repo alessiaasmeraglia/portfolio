@@ -1601,6 +1601,80 @@ button:focus-visible {
     border-bottom: 1px solid var(--border);
 }
 
+.project-page__case-study-button {
+    margin: 10rem 2rem 2rem 2rem;
+
+    border: 0;
+    background: transparent;
+
+    padding: 0;
+
+    font: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    text-decoration: underline;
+    text-underline-offset: 0.35rem;
+}
+
+.case-study-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 2rem;
+
+    background: rgba(0, 0, 0, 0.82);
+
+    overflow-y: auto;
+}
+
+.case-study-modal__content {
+    position: relative;
+
+    width: min(1200px, 100%);
+
+    background: #fff;
+
+    border-radius: 1.25rem;
+
+    overflow: hidden;
+}
+
+.case-study-modal__image {
+    display: block;
+
+    width: 100%;
+    height: auto;
+}
+
+.case-study-modal__close {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 10000;
+
+    width: 44px;
+    height: 44px;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: #fff;
+
+    font-size: 1.8rem;
+    line-height: 1;
+
+    cursor: pointer;
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
 
 /* =========================
    ANIMATIONS
@@ -1855,6 +1929,22 @@ button:focus-visible {
 
     .case-study__screenshot--large {
         grid-column: auto;
+    }
+
+    .case-study-modal {
+        padding: 1rem;
+    }
+
+    .case-study-modal__content {
+        border-radius: 0.75rem;
+    }
+
+    .case-study-modal__close {
+        top: 1rem;
+        right: 1rem;
+
+        width: 40px;
+        height: 40px;
     }
 
     .case-study__features {

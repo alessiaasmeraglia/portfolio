@@ -16,7 +16,7 @@ function Contact() {
                 </h2>
 
                 <a
-                    href="mailto:YOUR_EMAIL_HERE"
+                    href="mailto:alessia.smeraglia@gmail.com"
                     className="contact__email"
                 >
                     Get in touch

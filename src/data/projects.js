@@ -310,6 +310,7 @@ const projects = [
         id: 4,
         slug: "monte-bondone-ski",
         number: "04",
+
         title: "Monte Bondone Ski",
         category: "UX Research · Service Design",
         type: "UX / Product",
@@ -333,7 +334,7 @@ const projects = [
             "Service Blueprint",
             "Information Architecture",
             "User Flow",
-            "Wireframing"
+            "Wireframing",
         ],
 
         image: "/images/monte-bondone-cover.jpg",
@@ -342,6 +343,8 @@ const projects = [
 
         live:
             "https://www.figma.com/proto/LaSStNfrpadayNYshWtq2T/Monte-Bondone-Ski?node-id=62-2&starting-point-node-id=4%3A185",
+
+        liveLabel: "View prototype ↗",
 
         overview:
             "Monte Bondone Ski is a UX Research and Service Design project developed at the University of Trento in collaboration with Trento Funivie. The project explored the end-to-end ski pass experience across digital and physical touchpoints, with particular attention to mobile use.",
@@ -356,7 +359,7 @@ const projects = [
             "Users need quick and easily scannable information when making decisions, especially on mobile.",
             "Friction often appears between orientation, selection and the final action rather than within a single screen.",
             "Information hierarchy and content clarity are essential to help users understand available options.",
-            "The digital experience needs to reflect the operational reality of the wider service."
+            "The digital experience needs to reflect the operational reality of the wider service.",
         ],
 
         contribution: [
@@ -366,7 +369,7 @@ const projects = [
             "Mapped the end-to-end user journey",
             "Developed a service blueprint across customer and service touchpoints",
             "Worked on information architecture and user flows",
-            "Designed mobile-first wireframes in Figma"
+            "Designed mobile-first wireframes in Figma",
         ],
 
         featuresTitle: "The design process.",
@@ -380,7 +383,7 @@ const projects = [
             "Service blueprint",
             "Information architecture",
             "User flows",
-            "Mobile wireframes"
+            "Mobile wireframes",
         ],
 
         learnings:
@@ -390,29 +393,26 @@ const projects = [
             {
                 src: "/images/monte-bondone-research.jpg",
                 alt: "Monte Bondone Ski UX research and insight synthesis",
-                label: "Research & insights"
-            },
-            {
-                src: "/images/monte-bondone-journey.jpg",
-                alt: "Monte Bondone Ski user journey map",
-                label: "User journey"
+                label: "Research & insights",
             },
             {
                 src: "/images/monte-bondone-blueprint.jpg",
                 alt: "Monte Bondone Ski service blueprint",
-                label: "Service blueprint"
+                label: "Service blueprint",
             },
             {
                 src: "/images/monte-bondone-flow.jpg",
-                alt: "Monte Bondone Ski mobile user flow",
-                label: "User flow"
+                alt: "Monte Bondone Ski information architecture and user flow",
+                label: "Information architecture & flow",
             },
             {
                 src: "/images/monte-bondone-wireframes.jpg",
                 alt: "Monte Bondone Ski mobile wireframes",
-                label: "Mobile wireframes"
-            }
-        ]
+                label: "Mobile wireframes",
+            },
+        ],
+
+        fullCaseStudy: "/images/monte-bondone-full-case-study.svg",
     },
 ];
 

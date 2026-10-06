@@ -1,9 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import projects from "../data/projects";
 
 function ProjectPage() {
     const { slug } = useParams();
+
+    const [isCaseStudyOpen, setIsCaseStudyOpen] = useState(false);
 
     const project = projects.find((item) => item.slug === slug);
 
@@ -223,8 +225,8 @@ function ProjectPage() {
                                     <figure
                                         key={screenshot.src}
                                         className={`case-study__screenshot ${index === 0
-                                                ? "case-study__screenshot--large"
-                                                : ""
+                                            ? "case-study__screenshot--large"
+                                            : ""
                                             }`}
                                     >
                                         <div className="case-study__screenshot-image">
@@ -256,8 +258,49 @@ function ProjectPage() {
                                 )
                             )}
                         </div>
+                        {/*FULL CASE STUDY */}
+                        {project.fullCaseStudy && (
+                            <button
+                                type="button"
+                                className="project-page__case-study-button"
+                                onClick={() => setIsCaseStudyOpen(true)}
+                            >
+                                View full UX project ↗
+                            </button>
+                        )}
+                        {isCaseStudyOpen && project.fullCaseStudy && (
+                            <div
+                                className="case-study-modal"
+                                role="dialog"
+                                aria-modal="true"
+                                aria-label={`${project.title} full case study`}
+                                onClick={() => setIsCaseStudyOpen(false)}
+                            >
+                                <div
+                                    className="case-study-modal__content"
+                                    onClick={(event) => event.stopPropagation()}
+                                >
+                                    <button
+                                        type="button"
+                                        className="case-study-modal__close"
+                                        onClick={() => setIsCaseStudyOpen(false)}
+                                        aria-label="Close full case study"
+                                    >
+                                        ×
+                                    </button>
+
+                                    <img
+                                        src={project.fullCaseStudy}
+                                        alt={`${project.title} complete UX case study`}
+                                        className="case-study-modal__image"
+                                    />
+                                </div>
+                            </div>
+                        )}
                     </section>
                 )}
+
+
 
             {/* FEATURES */}
             {project.features &&
@@ -347,6 +390,7 @@ function ProjectPage() {
                     ))}
                 </div>
             </section>
+
 
             {/* LEARNINGS */}
             <section className="case-study__learning">
