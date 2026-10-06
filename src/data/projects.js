@@ -346,6 +346,10 @@ const projects = [
 
         liveLabel: "View prototype ↗",
 
+        galleryLabel: "Design process",
+        
+        galleryTitle: "From research to solution.",
+
         overview:
             "Monte Bondone Ski is a UX Research and Service Design project developed at the University of Trento in collaboration with Trento Funivie. The project explored the end-to-end ski pass experience across digital and physical touchpoints, with particular attention to mobile use.",
 

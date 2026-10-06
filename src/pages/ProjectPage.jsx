@@ -211,11 +211,19 @@ function ProjectPage() {
                 project.screenshots.length > 0 && (
                     <section className="case-study__gallery">
                         <div className="case-study__gallery-heading">
-                            <p className="section-label">Interface</p>
+                            <p className="section-label">
+                                {project.galleryLabel || "Interface"}
+                            </p>
 
                             <h2>
-                                Designed around the
-                                <span> product experience.</span>
+                                {project.galleryTitle ? (
+                                    project.galleryTitle
+                                ) : (
+                                    <>
+                                        Designed around the
+                                        <span> product experience.</span>
+                                    </>
+                                )}
                             </h2>
                         </div>
 
