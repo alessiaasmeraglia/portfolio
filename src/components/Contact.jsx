@@ -40,7 +40,7 @@ function Contact() {
                     </a>
 
                     <a
-                        href="#"
+                        href="https://www.linkedin.com/in/alessia-smeraglia"
                         target="_blank"
                         rel="noreferrer"
                     >

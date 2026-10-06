@@ -29,7 +29,7 @@ const projects = [
 
         image: "/images/climbcompare-cover.jpg",
 
-        github: "https://github.com/alessiaasmeraglia",
+        github: "https://github.com/alessiaasmeraglia/progetto-finale-spec-frontend-front",
         live: null,
 
         overview:
@@ -124,7 +124,7 @@ const projects = [
 
         image: "/images/jsons-quest-cover.jpg",
 
-        github: null,
+        github: "https://github.com/alessiaasmeraglia/project-work-frontend",
         live: null,
 
         overview:
