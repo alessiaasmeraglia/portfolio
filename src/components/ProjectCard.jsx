@@ -58,6 +58,12 @@ function ProjectCard({ project, index }) {
                         </Link>
                     </h3>
 
+                    {project.highlight && (
+                        <p className="project-card__highlight">
+                            {project.highlight}
+                        </p>
+                    )}
+
                     <p>{project.description}</p>
                 </div>
 

@@ -12,6 +12,8 @@ const projects = [
         timeline: "2026",
         status: "Personal project",
 
+        highlight: "AI-assisted product comparison platform",
+
         description:
             "An AI-powered climbing shoe comparison platform designed to help climbers explore models, compare products and find shoes suited to their needs.",
 
@@ -107,6 +109,8 @@ const projects = [
         role: "Front-end Developer",
         timeline: "2026",
         status: "Team project",
+
+        highlight: "Full-stack e-commerce team project",
 
         description:
             "A fantasy-inspired e-commerce platform developed as a team project, with a strong focus on product discovery, cart flows and a cohesive themed interface.",
@@ -205,6 +209,8 @@ const projects = [
         role: "UX/UI Designer & Web Developer",
         timeline: "Sep 2025 — Jan 2026",
         status: "Real client project",
+
+        highlight: "Website · Trento",
 
         description:
             "A real-world restaurant website redesigned and rebuilt from scratch after a change in management, with a mobile-first focus on bookings, menu access and phone calls.",
@@ -319,6 +325,8 @@ const projects = [
         role: "UX Researcher & Designer",
         timeline: "Mar 2024 — Jun 2024",
         status: "University project · Collaboration with Trento Funivie",
+
+        highlight: "UX Research · Service Design",
 
         description:
             "An end-to-end UX Research and Service Design project focused on the ski pass experience, from user research to mobile-first digital flows.",
