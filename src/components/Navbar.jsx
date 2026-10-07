@@ -16,20 +16,20 @@ function Navbar() {
 
     return (
         <header className="navbar">
-            <Link to="/" className="navbar__brand">
+            <Link to="/" className="navbar__brand" aria-label="Alessia Smeraglia home">
                 AS.
             </Link>
 
-            <nav className="navbar__links">
-                <button onClick={() => goToSection("work")}>
+            <nav className="navbar__links" aria-label="Primary navigation">
+                <button type="button" onClick={() => goToSection("work")}>
                     Work
                 </button>
 
-                <button onClick={() => goToSection("about")}>
+                <button type="button" onClick={() => goToSection("about")}>
                     About
                 </button>
 
-                <button onClick={() => goToSection("contact")}>
+                <button type="button" onClick={() => goToSection("contact")}>
                     Contact
                 </button>
             </nav>

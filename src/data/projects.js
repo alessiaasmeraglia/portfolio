@@ -204,13 +204,13 @@ const projects = [
         title: "Alla Grotta",
         category: "Client project · UX/UI · Web Development",
         type: "Client Work",
-        year: "2025",
+        year: "2025 — 2026",
 
         role: "UX/UI Designer & Web Developer",
         timeline: "Sep 2025 — Jan 2026",
         status: "Real client project",
 
-        highlight: "Website · Trento",
+        highlight: "Real client website · Trento",
 
         description:
             "A real-world restaurant website redesigned and rebuilt from scratch after a change in management, with a mobile-first focus on bookings, menu access and phone calls.",
@@ -229,6 +229,7 @@ const projects = [
 
         github: null,
         live: "https://www.pizzeriaallagrotta-trento.it/",
+        liveLabel: "Live website",
 
         overview:
             "Alla Grotta is a real client project for a restaurant in Trento. Following a change in management, the previous website was no longer usable, so I redesigned and rebuilt the site from scratch with a mobile-first approach and a clear focus on the restaurant’s key user actions.",
@@ -326,7 +327,7 @@ const projects = [
         timeline: "Mar 2024 — Jun 2024",
         status: "University project · Collaboration with Trento Funivie",
 
-        highlight: "UX Research · Service Design",
+        highlight: "UX Research · Service Design · Trento Funivie",
 
         description:
             "An end-to-end UX Research and Service Design project focused on the ski pass experience, from user research to mobile-first digital flows.",
@@ -352,7 +353,7 @@ const projects = [
         live:
             "https://www.figma.com/proto/LaSStNfrpadayNYshWtq2T/Monte-Bondone-Ski?node-id=62-2&starting-point-node-id=4%3A185",
 
-        liveLabel: "View prototype ↗",
+        liveLabel: "View prototype",
 
         galleryLabel: "Design process",
         

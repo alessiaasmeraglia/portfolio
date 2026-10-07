@@ -1,11 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import projects from "../data/projects";
 
 function ProjectPage() {
     const { slug } = useParams();
-
     const [isCaseStudyOpen, setIsCaseStudyOpen] = useState(false);
+    const closeButtonRef = useRef(null);
+    const triggerButtonRef = useRef(null);
 
     const project = projects.find((item) => item.slug === slug);
 
@@ -20,24 +21,50 @@ function ProjectPage() {
         };
     }, [project]);
 
+    useEffect(() => {
+        if (!isCaseStudyOpen) return undefined;
+
+        const previousOverflow = document.body.style.overflow;
+        document.body.style.overflow = "hidden";
+        closeButtonRef.current?.focus();
+
+        const handleKeyDown = (event) => {
+            if (event.key === "Escape") {
+                setIsCaseStudyOpen(false);
+            }
+        };
+
+        window.addEventListener("keydown", handleKeyDown);
+
+        return () => {
+            document.body.style.overflow = previousOverflow;
+            window.removeEventListener("keydown", handleKeyDown);
+            triggerButtonRef.current?.focus();
+        };
+    }, [isCaseStudyOpen]);
+
     if (!project) {
         return (
             <main className="project-not-found" id="main-content">
                 <p>404</p>
-
                 <h1>Project not found.</h1>
 
-                <Link to="/"><i className="bi bi-arrow-left" aria-hidden="true"></i> Back home</Link>
+                <Link to="/" className="icon-link">
+                    <i className="bi bi-arrow-left" aria-hidden="true" />
+                    Back home
+                </Link>
             </main>
         );
     }
 
     return (
         <main className="case-study" id="main-content">
-            {/* HERO */}
             <section className="case-study__hero">
                 <div className="case-study__back">
-                    <Link to="/#work"><i className="bi bi-arrow-left" aria-hidden="true"></i> Back to work</Link>
+                    <Link to="/#work" className="icon-link">
+                        <i className="bi bi-arrow-left" aria-hidden="true" />
+                        Back to work
+                    </Link>
                 </div>
 
                 <div className="case-study__meta">
@@ -46,10 +73,7 @@ function ProjectPage() {
                 </div>
 
                 <h1>{project.title}</h1>
-
-                <p className="case-study__intro">
-                    {project.description}
-                </p>
+                <p className="case-study__intro">{project.description}</p>
 
                 <div className="case-study__project-info">
                     {project.role && (
@@ -80,8 +104,13 @@ function ProjectPage() {
                             href={project.live}
                             target="_blank"
                             rel="noreferrer"
+                            className="icon-link"
                         >
-                            {project.liveLabel || "Live project ↗"}
+                            {project.liveLabel || "Live project"}
+                            <i
+                                className="bi bi-arrow-up-right"
+                                aria-hidden="true"
+                            />
                         </a>
                     )}
 
@@ -90,14 +119,18 @@ function ProjectPage() {
                             href={project.github}
                             target="_blank"
                             rel="noreferrer"
+                            className="icon-link"
                         >
-                            GitHub <i className="bi bi-arrow-up-right" aria-hidden="true"></i>
+                            GitHub
+                            <i
+                                className="bi bi-arrow-up-right"
+                                aria-hidden="true"
+                            />
                         </a>
                     )}
                 </div>
             </section>
 
-            {/* HERO IMAGE */}
             <section className="case-study__visual">
                 {project.image ? (
                     <div className="case-study__hero-image">
@@ -113,44 +146,31 @@ function ProjectPage() {
                 )}
             </section>
 
-            {/* OVERVIEW */}
             <section className="case-study__overview">
                 <div className="case-study__overview-label">
                     <p className="section-label">Overview</p>
-
-                    <p>
-                        From product idea to interface and implementation.
-                    </p>
+                    <p>From product idea to interface and implementation.</p>
                 </div>
 
-                <p className="case-study__large-copy">
-                    {project.overview}
-                </p>
+                <p className="case-study__large-copy">{project.overview}</p>
             </section>
 
-            {/* CHALLENGE / SOLUTION */}
             <section className="case-study__split">
                 <article>
                     <p className="section-label">Challenge</p>
-
                     <p>{project.challenge}</p>
                 </article>
 
                 <article>
                     <p className="section-label">Solution</p>
-
                     <p>{project.solution}</p>
                 </article>
             </section>
 
-            {/* INSIGHTS */}
             {project.insights && project.insights.length > 0 && (
                 <section className="case-study__insights">
                     <div className="case-study__insights-heading">
-                        <p className="section-label">
-                            Research & Insights
-                        </p>
-
+                        <p className="section-label">Research & Insights</p>
                         <h2>
                             What shaped the
                             <span> experience.</span>
@@ -159,14 +179,8 @@ function ProjectPage() {
 
                     <div className="case-study__insights-list">
                         {project.insights.map((insight, index) => (
-                            <div
-                                className="case-study__insight"
-                                key={insight}
-                            >
-                                <span>
-                                    {String(index + 1).padStart(2, "0")}
-                                </span>
-
+                            <div className="case-study__insight" key={insight}>
+                                <span>{String(index + 1).padStart(2, "0")}</span>
                                 <p>{insight}</p>
                             </div>
                         ))}
@@ -174,187 +188,156 @@ function ProjectPage() {
                 </section>
             )}
 
-            {/* CONTRIBUTION */}
-            {project.contribution &&
-                project.contribution.length > 0 && (
-                    <section className="case-study__contribution">
-                        <div className="case-study__contribution-heading">
-                            <p className="section-label">
-                                My contribution
-                            </p>
+            {project.contribution && project.contribution.length > 0 && (
+                <section className="case-study__contribution">
+                    <div className="case-study__contribution-heading">
+                        <p className="section-label">My contribution</p>
+                        <h2>
+                            What I worked
+                            <span> on.</span>
+                        </h2>
+                    </div>
 
-                            <h2>
-                                What I worked
-                                <span> on.</span>
-                            </h2>
-                        </div>
+                    <div className="case-study__contribution-list">
+                        {project.contribution.map((item, index) => (
+                            <div
+                                className="case-study__contribution-item"
+                                key={item}
+                            >
+                                <span>{String(index + 1).padStart(2, "0")}</span>
+                                <p>{item}</p>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+            )}
 
-                        <div className="case-study__contribution-list">
-                            {project.contribution.map((item, index) => (
-                                <div
-                                    className="case-study__contribution-item"
-                                    key={item}
-                                >
+            {project.screenshots && project.screenshots.length > 0 && (
+                <section className="case-study__gallery">
+                    <div className="case-study__gallery-heading">
+                        <p className="section-label">
+                            {project.galleryLabel || "Interface"}
+                        </p>
+
+                        <h2>
+                            {project.galleryTitle ? (
+                                project.galleryTitle
+                            ) : (
+                                <>
+                                    Designed around the
+                                    <span> product experience.</span>
+                                </>
+                            )}
+                        </h2>
+                    </div>
+
+                    <div className="case-study__gallery-grid">
+                        {project.screenshots.map((screenshot, index) => (
+                            <figure
+                                key={screenshot.src}
+                                className={`case-study__screenshot ${
+                                    index === 0
+                                        ? "case-study__screenshot--large"
+                                        : ""
+                                }`}
+                            >
+                                <div className="case-study__screenshot-image">
+                                    <img
+                                        src={screenshot.src}
+                                        alt={screenshot.alt}
+                                        onError={(event) => {
+                                            event.currentTarget.style.display =
+                                                "none";
+                                            event.currentTarget.parentElement.classList.add(
+                                                "case-study__screenshot-placeholder"
+                                            );
+                                        }}
+                                    />
+                                </div>
+
+                                <figcaption>
                                     <span>
                                         {String(index + 1).padStart(2, "0")}
                                     </span>
+                                    <p>{screenshot.label}</p>
+                                </figcaption>
+                            </figure>
+                        ))}
+                    </div>
 
-                                    <p>{item}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </section>
-                )}
+                    {project.fullCaseStudy && (
+                        <button
+                            ref={triggerButtonRef}
+                            type="button"
+                            className="project-page__case-study-button icon-link"
+                            onClick={() => setIsCaseStudyOpen(true)}
+                        >
+                            View full UX project
+                            <i
+                                className="bi bi-arrow-up-right"
+                                aria-hidden="true"
+                            />
+                        </button>
+                    )}
 
-            {/* GALLERY */}
-            {project.screenshots &&
-                project.screenshots.length > 0 && (
-                    <section className="case-study__gallery">
-                        <div className="case-study__gallery-heading">
-                            <p className="section-label">
-                                {project.galleryLabel || "Interface"}
-                            </p>
-
-                            <h2>
-                                {project.galleryTitle ? (
-                                    project.galleryTitle
-                                ) : (
-                                    <>
-                                        Designed around the
-                                        <span> product experience.</span>
-                                    </>
-                                )}
-                            </h2>
-                        </div>
-
-                        <div className="case-study__gallery-grid">
-                            {project.screenshots.map(
-                                (screenshot, index) => (
-                                    <figure
-                                        key={screenshot.src}
-                                        className={`case-study__screenshot ${index === 0
-                                            ? "case-study__screenshot--large"
-                                            : ""
-                                            }`}
-                                    >
-                                        <div className="case-study__screenshot-image">
-                                            <img
-                                                src={screenshot.src}
-                                                alt={screenshot.alt}
-                                                onError={(event) => {
-                                                    event.currentTarget.style.display =
-                                                        "none";
-
-                                                    event.currentTarget.parentElement.classList.add(
-                                                        "case-study__screenshot-placeholder"
-                                                    );
-                                                }}
-                                            />
-                                        </div>
-
-                                        <figcaption>
-                                            <span>
-                                                {String(index + 1).padStart(
-                                                    2,
-                                                    "0"
-                                                )}
-                                            </span>
-
-                                            <p>{screenshot.label}</p>
-                                        </figcaption>
-                                    </figure>
-                                )
-                            )}
-                        </div>
-                        {/*FULL CASE STUDY */}
-                        {project.fullCaseStudy && (
-                            <button
-                                type="button"
-                                className="project-page__case-study-button"
-                                onClick={() => setIsCaseStudyOpen(true)}
-                            >
-                                View full UX project <i className="bi bi-arrow-up-right" aria-hidden="true"></i>
-                            </button>
-                        )}
-                        {isCaseStudyOpen && project.fullCaseStudy && (
+                    {isCaseStudyOpen && project.fullCaseStudy && (
+                        <div
+                            className="case-study-modal"
+                            role="dialog"
+                            aria-modal="true"
+                            aria-label={`${project.title} full case study`}
+                            onClick={() => setIsCaseStudyOpen(false)}
+                        >
                             <div
-                                className="case-study-modal"
-                                role="dialog"
-                                aria-modal="true"
-                                aria-label={`${project.title} full case study`}
-                                onClick={() => setIsCaseStudyOpen(false)}
+                                className="case-study-modal__content"
+                                onClick={(event) => event.stopPropagation()}
                             >
-                                <div
-                                    className="case-study-modal__content"
-                                    onClick={(event) => event.stopPropagation()}
+                                <button
+                                    ref={closeButtonRef}
+                                    type="button"
+                                    className="case-study-modal__close"
+                                    onClick={() => setIsCaseStudyOpen(false)}
+                                    aria-label="Close full case study"
                                 >
-                                    <button
-                                        type="button"
-                                        className="case-study-modal__close"
-                                        onClick={() => setIsCaseStudyOpen(false)}
-                                        aria-label="Close full case study"
-                                    >
-                                        <i className="bi bi-x-lg" aria-hidden="true"></i>
-                                    </button>
-
-                                    <img
-                                        src={project.fullCaseStudy}
-                                        alt={`${project.title} complete UX case study`}
-                                        className="case-study-modal__image"
+                                    <i
+                                        className="bi bi-x-lg"
+                                        aria-hidden="true"
                                     />
-                                </div>
+                                </button>
+
+                                <img
+                                    src={project.fullCaseStudy}
+                                    alt={`${project.title} complete UX case study`}
+                                    className="case-study-modal__image"
+                                />
                             </div>
-                        )}
-                    </section>
-                )}
-
-
-
-            {/* FEATURES */}
-            {project.features &&
-                project.features.length > 0 && (
-                    <section className="case-study__features">
-                        <div>
-                            <p className="section-label">
-                                Key features
-                            </p>
-
-                            <h2>
-                                {project.featuresTitle ||
-                                    "What I built."}
-                            </h2>
                         </div>
+                    )}
+                </section>
+            )}
 
-                        <div className="case-study__feature-list">
-                            {project.features.map(
-                                (feature, index) => (
-                                    <div
-                                        className="case-study__feature"
-                                        key={feature}
-                                    >
-                                        <span>
-                                            {String(index + 1).padStart(
-                                                2,
-                                                "0"
-                                            )}
-                                        </span>
+            {project.features && project.features.length > 0 && (
+                <section className="case-study__features">
+                    <div>
+                        <p className="section-label">Key features</p>
+                        <h2>{project.featuresTitle || "What I built."}</h2>
+                    </div>
 
-                                        <p>{feature}</p>
-                                    </div>
-                                )
-                            )}
-                        </div>
-                    </section>
-                )}
+                    <div className="case-study__feature-list">
+                        {project.features.map((feature, index) => (
+                            <div className="case-study__feature" key={feature}>
+                                <span>{String(index + 1).padStart(2, "0")}</span>
+                                <p>{feature}</p>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+            )}
 
-            {/* METRICS */}
             {project.metrics && project.metrics.length > 0 && (
                 <section className="case-study__metrics">
                     <div className="case-study__metrics-heading">
-                        <p className="section-label">
-                            Measurement
-                        </p>
-
+                        <p className="section-label">Measurement</p>
                         <h2>
                             Tracking what
                             <span> matters.</span>
@@ -375,48 +358,33 @@ function ProjectPage() {
                 </section>
             )}
 
-            {/* RESULTS */}
             {project.results && (
                 <section className="case-study__results">
                     <p className="section-label">Results</p>
-
-                    <p className="case-study__large-copy">
-                        {project.results}
-                    </p>
+                    <p className="case-study__large-copy">{project.results}</p>
                 </section>
             )}
 
-            {/* STACK */}
             <section className="case-study__stack">
                 <p className="section-label">Stack</p>
-
                 <div className="case-study__stack-list">
                     {project.technologies.map((technology) => (
-                        <span key={technology}>
-                            {technology}
-                        </span>
+                        <span key={technology}>{technology}</span>
                     ))}
                 </div>
             </section>
 
-
-            {/* LEARNINGS */}
             <section className="case-study__learning">
-                <p className="section-label">
-                    What I learned
-                </p>
-
-                <p className="case-study__large-copy">
-                    {project.learnings}
-                </p>
+                <p className="section-label">What I learned</p>
+                <p className="case-study__large-copy">{project.learnings}</p>
             </section>
 
-            {/* NEXT */}
             <section className="case-study__next">
                 <p>Explore more work</p>
 
-                <Link to="/#work">
-                    All projects →
+                <Link to="/#work" className="icon-link">
+                    All projects
+                    <i className="bi bi-arrow-right" aria-hidden="true" />
                 </Link>
             </section>
         </main>
