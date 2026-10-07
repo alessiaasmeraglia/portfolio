@@ -349,7 +349,8 @@ const projects = [
             "Wireframing",
         ],
 
-        image: "/images/monte-bondone-cover.jpg",
+        image: "/images/monte-bondone-cover.png",
+        heroImage: "/images/monte-bondone-hero.png",
 
         github: null,
 
