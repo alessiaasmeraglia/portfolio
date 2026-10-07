@@ -29,7 +29,8 @@ const projects = [
             "LocalStorage",
         ],
 
-        image: "/images/climbcompare-cover.jpg",
+        image: "/images/climbcompare-cover.png",
+        heroImage: "/images/climbcompare-hero.jpg",
 
         github: "https://github.com/alessiaasmeraglia/progetto-finale-spec-frontend-front",
         live: null,
@@ -126,7 +127,8 @@ const projects = [
             "Git"
         ],
 
-        image: "/images/jsons-quest-cover.jpg",
+        image: "/images/jsons-quest-cover.png",
+        heroImage: "/images/jsons-quest-hero.jpg",
 
         github: "https://github.com/alessiaasmeraglia/project-work-frontend",
         live: null,
@@ -225,7 +227,8 @@ const projects = [
             "Responsive Design"
         ],
 
-        image: "/images/alla-grotta-cover.jpg",
+        image: "/images/alla-grotta-cover.png",
+        heroImage: "/images/alla-grotta-hero.jpg",
 
         github: null,
         live: "https://www.pizzeriaallagrotta-trento.it/",
@@ -356,7 +359,7 @@ const projects = [
         liveLabel: "View prototype",
 
         galleryLabel: "Design process",
-        
+
         galleryTitle: "From research to solution.",
 
         overview:

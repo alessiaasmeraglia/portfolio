@@ -9,48 +9,40 @@ function Projects() {
         <section className="projects" id="work">
             <div className="projects__intro">
                 <motion.p
-                    className="section-label"
-                    initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+                    className="section-label projects__label"
+                    initial={reduceMotion ? false : { opacity: 0, y: 14 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.8 }}
+                    viewport={{ once: true, amount: 0.6 }}
                     transition={{
-                        duration: 0.6,
+                        duration: 0.65,
                         ease: [0.22, 1, 0.36, 1],
                     }}
                 >
                     Selected Work
                 </motion.p>
 
-                <div className="projects__title-mask">
-                    <motion.h2
-                        initial={
-                            reduceMotion
-                                ? false
-                                : {
-                                      y: "110%",
-                                      opacity: 0,
-                                  }
-                        }
-                        whileInView={{ y: 0, opacity: 1 }}
-                        viewport={{ once: true, amount: 0.35 }}
-                        transition={{
-                            duration: 0.9,
-                            ease: [0.22, 1, 0.36, 1],
-                        }}
-                    >
-                        Projects where design
-                        <span> meets development.</span>
-                    </motion.h2>
-                </div>
+                <motion.h2
+                    initial={reduceMotion ? false : { opacity: 0, y: 38 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{
+                        duration: 0.95,
+                        delay: reduceMotion ? 0 : 0.08,
+                        ease: [0.22, 1, 0.36, 1],
+                    }}
+                >
+                    Projects where design
+                    <span> meets development.</span>
+                </motion.h2>
 
                 <motion.div
                     className="projects__intro-line"
                     initial={reduceMotion ? false : { scaleX: 0 }}
                     whileInView={{ scaleX: 1 }}
-                    viewport={{ once: true, amount: 0.6 }}
+                    viewport={{ once: true, amount: 0.5 }}
                     transition={{
-                        duration: 1.1,
-                        delay: reduceMotion ? 0 : 0.15,
+                        duration: 1,
+                        delay: reduceMotion ? 0 : 0.12,
                         ease: [0.22, 1, 0.36, 1],
                     }}
                     aria-hidden="true"

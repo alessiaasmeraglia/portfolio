@@ -351,12 +351,11 @@ img {
 }
 
 .section-label {
-    margin-bottom: 2rem;
-    font-size: 0.75rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--muted);
+    margin-bottom: 3rem;
+    font-size: clamp(1rem, 1.2vw, 1.35rem);
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--text);
 }
 
 .projects__intro h2 {

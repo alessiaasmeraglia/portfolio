@@ -132,10 +132,10 @@ function ProjectPage() {
             </section>
 
             <section className="case-study__visual">
-                {project.image ? (
+                {project.heroImage || project.image ? (
                     <div className="case-study__hero-image">
                         <img
-                            src={project.image}
+                            src={project.heroImage || project.image}
                             alt={`${project.title} interface preview`}
                         />
                     </div>
@@ -235,11 +235,10 @@ function ProjectPage() {
                         {project.screenshots.map((screenshot, index) => (
                             <figure
                                 key={screenshot.src}
-                                className={`case-study__screenshot ${
-                                    index === 0
+                                className={`case-study__screenshot ${index === 0
                                         ? "case-study__screenshot--large"
                                         : ""
-                                }`}
+                                    }`}
                             >
                                 <div className="case-study__screenshot-image">
                                     <img
