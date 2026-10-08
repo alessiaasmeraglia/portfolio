@@ -5,18 +5,28 @@ function ScrollToHash() {
     const location = useLocation();
 
     useEffect(() => {
+        if ("scrollRestoration" in window.history) {
+            window.history.scrollRestoration = "manual";
+        }
+
         if (location.hash) {
             const id = location.hash.replace("#", "");
 
-            setTimeout(() => {
+            requestAnimationFrame(() => {
                 document
                     .getElementById(id)
                     ?.scrollIntoView({ behavior: "smooth" });
-            }, 50);
-        } else {
-            window.scrollTo(0, 0);
+            });
+
+            return;
         }
-    }, [location]);
+
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "auto",
+        });
+    }, [location.pathname, location.hash]);
 
     return null;
 }
