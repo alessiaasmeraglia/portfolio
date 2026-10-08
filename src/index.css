@@ -1960,7 +1960,7 @@ button:focus-visible {
     }
 
     .case-study__hero h1 {
-        font-size: clamp(4rem, 19vw, 7rem);
+        font-size: clamp(1rem, 12vw, 3rem);
     }
 
     .case-study__intro {

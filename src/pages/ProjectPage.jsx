@@ -11,6 +11,14 @@ function ProjectPage() {
     const project = projects.find((item) => item.slug === slug);
 
     useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "instant",
+        });
+    }, [slug]);
+
+    useEffect(() => {
         if (project) {
             document.title = `${project.title} — Alessia Smeraglia`;
         }
@@ -72,7 +80,7 @@ function ProjectPage() {
                     <span>{project.year}</span>
                 </div>
 
-                <h1>{project.title}</h1>
+                <h1 className="case-study__title">{project.title}</h1>
                 <p className="case-study__intro">{project.description}</p>
 
                 <div className="case-study__project-info">
@@ -236,8 +244,8 @@ function ProjectPage() {
                             <figure
                                 key={screenshot.src}
                                 className={`case-study__screenshot ${index === 0
-                                        ? "case-study__screenshot--large"
-                                        : ""
+                                    ? "case-study__screenshot--large"
+                                    : ""
                                     }`}
                             >
                                 <div className="case-study__screenshot-image">
