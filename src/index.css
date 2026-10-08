@@ -191,16 +191,11 @@ img {
     width: 100%;
 }
 
-.hero__eyebrow,
 .hero__location {
     font-size: 0.75rem;
     line-height: 1.5;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-}
-
-.hero__eyebrow {
-    position: static;
 }
 
 .hero__location {
@@ -1806,7 +1801,6 @@ button:focus-visible {
         gap: 2rem;
     }
 
-    .hero__eyebrow,
     .hero__location {
         font-size: 0.65rem;
     }
