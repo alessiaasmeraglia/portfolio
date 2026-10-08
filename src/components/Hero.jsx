@@ -41,21 +41,20 @@ function Hero() {
             </div>
 
             <div className="hero__content">
-                <motion.h1
-                    initial={{ x: "100vw", opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{
-                        duration: 0.9,
-                        ease: [0.22, 1, 0.36, 1],
-                    }}
-                >
+                <motion.h1>
                     <motion.span
-                        className="hero__title-line hero__title-line--main"
-                        initial={{ x: "100vw" }}
-                        animate={{ x: [0, -10, 0] }}
+                        className="hero__title-line"
+                        initial={{
+                            opacity: 0,
+                            x: 140,
+                        }}
+                        animate={{
+                            opacity: 1,
+                            x: 0,
+                        }}
                         transition={{
-                            duration: 0.9,
-                            ease: [0.22, 1, 0.36, 1],
+                            duration: 1.4,
+                            ease: [0.16, 1, 0.3, 1],
                         }}
                     >
                         Full-stack developer
@@ -63,15 +62,18 @@ function Hero() {
 
                     <motion.span
                         className="hero__title-line hero__title-line--accent"
-                        initial={{ x: 200, opacity: 0 }}
+                        initial={{
+                            opacity: 0,
+                            x: 140,
+                        }}
                         animate={{
-                            x: [0, -8, 0],
                             opacity: 1,
+                            x: 0,
                         }}
                         transition={{
-                            duration: 1.7,
-                            delay: 0.2,
-                            ease: [0.44, 1, 0.36, 1],
+                            duration: 1.4,
+                            delay: 0.45,
+                            ease: [0.16, 1, 0.3, 1],
                         }}
                     >
                         with a UX mindset.
@@ -81,20 +83,25 @@ function Hero() {
                 <div className="hero__bottom">
                     <motion.p
                         className="hero__description"
-                        initial={reduceMotion ? false : { opacity: 0, y: 12 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        initial={{
+                            opacity: 0,
+                            y: 25,
+                        }}
+                        animate={{
+                            opacity: 1,
+                            y: 0,
+                        }}
                         transition={{
-                            duration: 0.6,
-                            delay: reduceMotion ? 0 : 0.18,
-                            ease: [0.22, 1, 0.36, 1],
+                            duration: 1,
+                            delay: 0.65,
+                            ease: [0.16, 1, 0.3, 1],
                         }}
                     >
-                        I design and build accessible, responsive digital
-                        products with React, Node.js and modern web
-                        technologies, combining development with a strong focus
-                        on usability and user experience.
+                        I design and build accessible, responsive digital products
+                        with React, Node.js and modern web technologies, combining
+                        development with a strong focus on usability and user
+                        experience.
                     </motion.p>
-
                     <motion.a
                         href="#work"
                         className="hero__cta"

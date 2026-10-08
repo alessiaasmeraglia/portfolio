@@ -540,7 +540,8 @@ img {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
     gap: 4rem;
-    padding-top: 2rem;
+
+    padding-top: 1.6rem;
 }
 
 .project-card__copy {
@@ -549,17 +550,17 @@ img {
 }
 
 .project-card h3 {
-    margin-bottom: 1.2rem;
-    font-size: clamp(2.2rem, 4vw, 4rem);
+    margin-bottom: 1.1rem;
+
+    font-size: clamp(2.3rem, 4vw, 4rem);
     font-weight: 500;
+
     line-height: 0.95;
     letter-spacing: -0.05em;
 }
 
 .project-card h3 a {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
+    display: inline-block;
 }
 
 .project-card__title-text {
@@ -567,26 +568,19 @@ img {
 }
 
 .project-card__title-arrow {
-    display: inline-block;
-    font-size: 0.42em;
-    opacity: 0;
-    transform: translate(-8px, 8px);
-    transition: opacity 0.25s ease, transform 0.25s ease;
-}
-
-.project-card h3 a:hover .project-card__title-arrow {
-    opacity: 1;
-    transform: translate(0, 0);
+    display: none;
 }
 
 .project-card__highlight {
     position: relative;
 
-    margin-bottom: 2.8rem;
-    padding-bottom: 1.2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.25rem;
 
-    font-size: 0.7rem;
+    font-size: 0.68rem;
     font-weight: 700;
+
+    line-height: 1.4;
 
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -601,7 +595,7 @@ img {
     left: 0;
     bottom: 0;
 
-    width: 60px;
+    width: 56px;
     height: 3px;
 
     border-radius: 999px;
@@ -609,27 +603,35 @@ img {
     background: var(--accent);
 }
 
-.project-card__copy>p:not(.project-card__highlight) {
+.project-card__copy > p:not(.project-card__highlight) {
+    max-width: 560px;
+
     margin-top: 0;
-    max-width: 650px;
+
     font-size: 1rem;
-    line-height: 1.6;
+    line-height: 1.7;
+
     color: var(--muted);
 }
 
 .project-card__technologies {
     align-self: end;
+
     display: flex;
     justify-content: flex-end;
     flex-wrap: wrap;
-    gap: 0.5rem;
+
+    gap: 0.55rem;
 }
 
 .project-card__technologies span {
-    padding: 0.6rem 0.9rem;
+    padding: 0.65rem 1rem;
+
     border: 1px solid var(--border);
     border-radius: 999px;
-    font-size: 0.7rem;
+
+    font-size: 0.68rem;
+
     text-transform: uppercase;
     letter-spacing: 0.06em;
 }
@@ -2215,8 +2217,8 @@ button:focus-visible {
     *,
     *::before,
     *::after {
-        animation-duration: 0.01ms !important;
+        animation-duration: 0.05ms !important;
         animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
+        transition-duration: 0.05ms !important;
     }
 }

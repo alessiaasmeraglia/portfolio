@@ -9,23 +9,34 @@ function ScrollToHash() {
             window.history.scrollRestoration = "manual";
         }
 
-        if (location.hash) {
-            const id = location.hash.replace("#", "");
-
-            requestAnimationFrame(() => {
-                document
-                    .getElementById(id)
-                    ?.scrollIntoView({ behavior: "smooth" });
+        // Homepage normale → resta SEMPRE sulla hero
+        if (location.pathname === "/" && !location.hash) {
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: "instant",
             });
 
             return;
         }
 
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: "auto",
-        });
+        // Scrolla solo quando esiste davvero un hash
+        if (location.hash) {
+            const id = location.hash.replace("#", "");
+
+            const timeout = setTimeout(() => {
+                const element = document.getElementById(id);
+
+                if (element) {
+                    element.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                    });
+                }
+            }, 100);
+
+            return () => clearTimeout(timeout);
+        }
     }, [location.pathname, location.hash]);
 
     return null;
