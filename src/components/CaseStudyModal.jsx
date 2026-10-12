@@ -1,9 +1,29 @@
+import { useEffect } from "react";
+
 function CaseStudyModal({
     isOpen,
     image,
     title,
     onClose,
 }) {
+    useEffect(() => {
+        if (!isOpen) return;
+
+        const handleKeyDown = (event) => {
+            if (event.key === "Escape") {
+                onClose();
+            }
+        };
+
+        document.body.style.overflow = "hidden";
+        window.addEventListener("keydown", handleKeyDown);
+
+        return () => {
+            document.body.style.overflow = "";
+            window.removeEventListener("keydown", handleKeyDown);
+        };
+    }, [isOpen, onClose]);
+
     if (!isOpen || !image) {
         return null;
     }
@@ -26,10 +46,7 @@ function CaseStudyModal({
                     onClick={onClose}
                     aria-label="Close full case study"
                 >
-                    <i
-                        className="bi bi-x-lg"
-                        aria-hidden="true"
-                    ></i>
+                    <i className="bi bi-x-lg" aria-hidden="true"></i>
                 </button>
 
                 <img
