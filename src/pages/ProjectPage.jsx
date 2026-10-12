@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import projects from "../data/projects";
+import CaseStudyModal from "../components/CaseStudyModal";
 
 function ProjectPage() {
     const { slug } = useParams();
@@ -287,39 +288,12 @@ function ProjectPage() {
                         </button>
                     )}
 
-                    {isCaseStudyOpen && project.fullCaseStudy && (
-                        <div
-                            className="case-study-modal"
-                            role="dialog"
-                            aria-modal="true"
-                            aria-label={`${project.title} full case study`}
-                            onClick={() => setIsCaseStudyOpen(false)}
-                        >
-                            <div
-                                className="case-study-modal__content"
-                                onClick={(event) => event.stopPropagation()}
-                            >
-                                <button
-                                    ref={closeButtonRef}
-                                    type="button"
-                                    className="case-study-modal__close"
-                                    onClick={() => setIsCaseStudyOpen(false)}
-                                    aria-label="Close full case study"
-                                >
-                                    <i
-                                        className="bi bi-x-lg"
-                                        aria-hidden="true"
-                                    />
-                                </button>
-
-                                <img
-                                    src={project.fullCaseStudy}
-                                    alt={`${project.title} complete UX case study`}
-                                    className="case-study-modal__image"
-                                />
-                            </div>
-                        </div>
-                    )}
+                    <CaseStudyModal
+                        isOpen={isCaseStudyOpen}
+                        image={project.fullCaseStudy}
+                        title={project.title}
+                        onClose={() => setIsCaseStudyOpen(false)}
+                    />
                 </section>
             )}
 
